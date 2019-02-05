@@ -14,6 +14,14 @@ import java.io.File;
 
 //FIXME: need a way to figure out how to pick 2 quarter-sequence classes or just classes where you have to pick (e.g. 2 out of 3 of x options)
 //FIXME: need a way so that after it's done with required, it can do electives using the same schedule blocks as before
+    //maybe merge into one method call that just loops through required first?
+        //but then it still has to have the same time reverse mechanism
+
+/*FIXME: **IMPORTANT** MAIN ISSUES (RELATING TO AFTER)
+    //FIXME: have to then add the afters of THESE courses to after, but after the loop is done
+    //FIXME: since it can add classes during AFTER loop and then also later, it adds the same classes twice
+ */
+
 
 public class Schedule {
     private Student student;
@@ -25,7 +33,6 @@ public class Schedule {
 
     public Schedule(Student student, ArrayList<Course> classesOffered) {
         this.student = student;
-  //      this.academicTimes = initTimes();
         this.classesOffered = classesOffered;
         this.schedule = new HashMap<AcademicTime, ScheduleBlock>(12); //max initial capacity needed if no summer sessions
         //FIXME: AFTER
@@ -56,8 +63,17 @@ public class Schedule {
             Course afterCourse;
             for(int i = 0; i < after.size(); i++){
                 afterCourse = classesByName.get(after.get(i));
-                after.remove(i);
-                i--; //because we're decreasing the size of the list
+
+
+                //FIXME: since it can add classes here and then also later, it adds the same classes twice
+                if(afterCourse != null){ //FIXME: have to then add the afters of THESE courses to after, but after the loop is done
+                    if(afterCourse.isOffered(curTime) && afterCourse.getRequired().get(student.getMajor())){
+                        curBlock.addCourse(afterCourse);
+                        System.out.println("Adding: " + afterCourse.getName() + " at " + curTime.getQuarter() + " " + curTime.getYear());
+                        after.remove(i);
+                        i--; //because we're decreasing the size of the list
+                    }
+                }
             }
 
 
@@ -99,7 +115,7 @@ public class Schedule {
 
 
 
-
+//FIXME: Add Excel support
 /*
     public void importClassesOffered(){
         ClassLoader classLoader = getClass().getClassLoader();
