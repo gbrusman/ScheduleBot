@@ -12,6 +12,9 @@ import java.util.HashMap;
 import org.apache.poi.ss.usermodel.*;
 import java.io.File;
 
+//FIXME: need a way to figure out how to pick 2 quarter-sequence classes or just classes where you have to pick (e.g. 2 out of 3 of x options)
+//FIXME: need a way so that after it's done with required, it can do electives using the same schedule blocks as before
+
 public class Schedule {
     private Student student;
     //private ArrayList<AcademicTime> academicTimes; //times between curTime and gradTime
@@ -46,7 +49,7 @@ public class Schedule {
         ArrayList<String> after = new ArrayList<String>(2);
 
 
-        while (curTime != gradTime) { //for each class that's offered by UC Davis
+        while (!curTime.equals(gradTime)) { //for each class that's offered by UC Davis
             ScheduleBlock curBlock = new ScheduleBlock(curTime);
 
             //add the courses in the after list from the previous quarter
