@@ -1,0 +1,13 @@
+ScheduleBot:
+
+Algorithm:
+1.) Get info from Students (what they've taken, when they plan on graduating, current time (quarter/year) )
+2.) Make Schedule (~2 math classes per quarter if possible)
+	a.) Fill in Requirements
+		i.) can fill in quarter by quarter, 2 at a time if prereqs are satisfied, then can go back after if need be (like say someone needs to take 3 classes in a quarter to graduate)
+	b.) Fill in Electives
+		ii.) can fill these in AFTER requirements
+	*note: fill in series consecutively or using AFTER variable (E.g. 21B comes AFTER 21A).
+
+Data needed:
+Class name, quarters offered, prereqs, interest group, what should come directly after (if anything), what majors the class is required for (within math dept.)

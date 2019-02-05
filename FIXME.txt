@@ -1,0 +1,4 @@
+need to make Course.required an array so that it can be different for the different majors.
+	- can map each major to an index in the array
+	- but also don't want to have to check for every major
+		- could use hashmap<Major, boolean> and pull it out by major

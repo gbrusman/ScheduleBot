@@ -1,0 +1,10 @@
+AB1, AB2, BS1, BS2: (ENG06 OR ECS32A) AND (MAT22AL OR ENG06)
+
+Applied Math BS, LMCOBIO, LMCOMATH: ENG06 AND ECS32A
+
+LMOR: ENG06 OR (22AL AND ECS32A)
+
+
+----------------------------------------------------------------------
+All Majors: (22A AND 108) OR (67)
+ 
