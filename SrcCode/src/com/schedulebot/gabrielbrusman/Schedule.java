@@ -17,7 +17,7 @@ public class Schedule {
     //private ArrayList<AcademicTime> academicTimes; //times between curTime and gradTime
     private ArrayList<Course> classesOffered; //all classes offered (from spreadsheet)
     private HashMap<AcademicTime, ScheduleBlock> schedule;
-    //private HashMap<String, Course> classesByName; //FIXME: AFTER
+    private HashMap<String, Course> classesByName; //FIXME: AFTER
 
 
     public Schedule(Student student, ArrayList<Course> classesOffered) {
@@ -25,28 +25,17 @@ public class Schedule {
   //      this.academicTimes = initTimes();
         this.classesOffered = classesOffered;
         this.schedule = new HashMap<AcademicTime, ScheduleBlock>(12); //max initial capacity needed if no summer sessions
-/* //FIXME: AFTER
+        //FIXME: AFTER
+        this.classesByName = new HashMap<String, Course>(55);
         for(Course course: this.classesOffered){
             this.classesByName.put(course.getName(), course);
         }
-*/
+
         placeClasses(true);
         System.out.println("done with required!"); //for debugging
         placeClasses(false);
     }
-/*
-    public ArrayList<AcademicTime> initTimes(){
-        AcademicTime curTime = student.getCurTime(); //get current time
-        this.academicTimes.add(curTime); //add to array
-        //need a while loop here to initialize the rest of the values
-        AcademicTime endTime = student.getGradTime(); //get the end so we know where to stop
-        while(curTime != endTime){
-            curTime.progressTime();
-            this.academicTimes.add(curTime);
-        }
-        return academicTimes;
-    }
-*/
+
 
 
     public void placeClasses(boolean required) {
@@ -59,27 +48,33 @@ public class Schedule {
 
         while (curTime != gradTime) { //for each class that's offered by UC Davis
             ScheduleBlock curBlock = new ScheduleBlock(curTime);
-         /*   for(String courseName: after){ //FIXME: AFTER
-                curBlock.addCourse(classesByName.get(courseName));
-                after.remove(courseName);
-            }*/
+
+            //add the courses in the after list from the previous quarter
+            Course afterCourse;
+            for(int i = 0; i < after.size(); i++){
+                afterCourse = classesByName.get(after.get(i));
+                after.remove(i);
+                i--; //because we're decreasing the size of the list
+            }
+
+
             for (Course curCourse : classesOffered) {
                 if(curBlock.getCourses().size() == 2){ //if the current block is full of classes
                     break; //exit loop so we can move to next quarter and create new block
                 }
                 if (curCourse.isOffered(curTime) && student.hasPrereqs(curCourse) && !student.hasTaken(curCourse.getName()) && student.meetsRecommendations(curCourse)) {
                     if(required){ //if we're placing required classes, then we have to check if the course is required
-                        if(curCourse.getRequired().get(student.getMajor())){ //FIXME: my attempt at getting the value from the HashMap (prob doesn't work)
+                        if(curCourse.getRequired().get(student.getMajor())){
                             //place course in the earliest possible quarter
                             curBlock.addCourse(curCourse); //adds course to current block
                             System.out.println("Adding: " + curCourse.getName() + " at " + curTime.getQuarter() + " " + curTime.getYear());
-                            after.add(curCourse.getAfter()); //FIXME: might need a null check if we're adding null values
+                            after.add(curCourse.getAfter());
                         }
                     }
                     else{ //we're not only placing require classes, so just place course in the earliest possible quarter
                         curBlock.addCourse(curCourse); //adds course to current block
                         System.out.println("Adding: " + curCourse.getName() + " at " + curTime.getQuarter() + " " + curTime.getYear());
-                        after.add(curCourse.getAfter()); //FIXME: might need a null check if we're adding null values
+                        after.add(curCourse.getAfter());
                     }
                 }
 
@@ -93,6 +88,15 @@ public class Schedule {
         }
     }
 
+
+
+
+
+
+
+
+
+
 /*
     public void importClassesOffered(){
         ClassLoader classLoader = getClass().getClassLoader();
@@ -104,26 +108,3 @@ public class Schedule {
 
 
 
-
-
-   /* public void placeRequiredClasses(){
-        AcademicTime gradTime = student.getGradTime();
-        ScheduleBlock scheduleBlock;
-        for(Course curCourse: classesOffered){ //for each class that's offered by UC Davis
-            AcademicTime curTime = student.getCurTime();
-            scheduleBlock.setTime(curTime); //sets the time of the block
-            boolean placed = false;
-            while((curTime != gradTime) && !placed) { //while there are still times to place the class and the class isn't placed
-                //if the course is required, offered, and the student has the prereqs to take it
-                if (curCourse.getRequired() && curCourse.isOffered(curTime) && student.hasPrereqs(curCourse) && !student.hasTaken(curCourse)){
-                    //place course in the earliest possible quarter
-                    scheduleBlock.addCourse(curCourse); //
-                    placed = true;
-                }
-                else {
-                    curTime.progressTime();
-                }
-                }
-            }
-        }
-*/
