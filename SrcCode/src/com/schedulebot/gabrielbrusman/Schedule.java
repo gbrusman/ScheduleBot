@@ -16,6 +16,7 @@ import java.io.File;
 //FIXME: need a way so that after it's done with required, it can do electives using the same schedule blocks as before
     //maybe merge into one method call that just loops through required first?
         //but then it still has to have the same time reverse mechanism
+//FIXME: adding elective classes just adds all non-required classes (relates to above)
 
 /*FIXME: **IMPORTANT** MAIN ISSUES (RELATING TO AFTER)
     //FIXME: have to then add the afters of THESE courses to after, but after the loop is done
