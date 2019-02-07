@@ -13,12 +13,10 @@ import org.apache.poi.ss.usermodel.*;
 import java.io.File;
 
 //FIXME: need a way to figure out how to pick 2 quarter-sequence classes or just classes where you have to pick (e.g. 2 out of 3 of x options)
-//FIXME: adding elective classes just adds all non-required classes (relates to above)
-
-/*FIXME: **IMPORTANT** MAIN ISSUES (RELATING TO AFTER)
-    //FIXME: have to then add the afters of THESE courses to after, but after the loop is done
- */
-
+    //related to isRedundant
+//FIXME: might want isRedundant function per major, or if statements based on major
+//FIXME: for choosing between PHY, CHE, ECN, etc. could just ask at the beginning what they'd prefer to take
+    //only need to ask for certain majors though (Applied, BS2)
 
 public class Schedule {
     //data members
@@ -80,7 +78,7 @@ public void addCourseToBlock(Course course, ScheduleBlock block, ArrayList<Strin
     after.add(course.getAfter());
     classesOffered.remove(course);
 }
-
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 public void addCourseFromAfter(Course course, ScheduleBlock block, ArrayList<String> after, AcademicTime time, int index){
     block.addCourse(course); //adds course to current block
@@ -89,10 +87,12 @@ public void addCourseFromAfter(Course course, ScheduleBlock block, ArrayList<Str
     classesOffered.remove(course);
     after.remove(index);
 }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 public void fillFromAfter(ScheduleBlock curBlock, ArrayList<String> after, AcademicTime curTime){
     //add the courses in the after list from the previous quarter
     Course afterCourse;
+    ArrayList<String> nextAfter = new ArrayList<String>(2);
 
     for(int i = 0; i < after.size(); i++){
         afterCourse = classesByName.get(after.get(i));
@@ -100,11 +100,16 @@ public void fillFromAfter(ScheduleBlock curBlock, ArrayList<String> after, Acade
         if(afterCourse != null){ //FIXME: have to then add the afters of THESE courses to after, but after the loop is done
             if(afterCourse.isOffered(curTime) && afterCourse.getRequired().get(student.getMajor())){
                 addCourseFromAfter(afterCourse, curBlock, after, curTime, i);
+                nextAfter.add(afterCourse.getAfter());
                 i--; //because we're decreasing the size of the list
             }
         }
     }
+    for(int i = 0; i < nextAfter.size(); i++){ //adds next quarter's "afters" from the current quarter's afters
+        after.add(nextAfter.get(i));
+    }
 }
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 public void tryToFillCurTime(ScheduleBlock curBlock, ArrayList<String> after, AcademicTime curTime){
 
@@ -117,7 +122,7 @@ public void tryToFillCurTime(ScheduleBlock curBlock, ArrayList<String> after, Ac
             if (curBlock.getCourses().size() == 2) { //if the current block is full of classes
                 break; //exit loop so we can move to next quarter and create new block
             }
-            if (curCourse.isOffered(curTime) && student.hasPrereqs(curCourse) && !student.hasTaken(curCourse.getName()) && student.meetsRecommendations(curCourse)) {
+            if (curCourse.isOffered(curTime) && student.hasPrereqs(curCourse) && !student.hasTaken(curCourse.getName()) && student.meetsRecommendations(curCourse) && !isRedundant(curCourse, curBlock)) {
                 if (requiredOrElectives == 0) { //if we're placing required classes, then we have to check if the course is required
                     if (curCourse.getRequired().get(student.getMajor())) {
                         //place course in the earliest possible quarter
@@ -133,10 +138,19 @@ public void tryToFillCurTime(ScheduleBlock curBlock, ArrayList<String> after, Ac
         requiredOrElectives++;
     }
 }
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    public boolean isRedundant(Course course, ScheduleBlock block){
+        switch(course.getName()){
+            case "MAT67":
+                return student.hasTaken("MAT22A") || student.hasTaken("MAT108") || block.contains("MAT22A") || block.contains("MAT108");
+            case "MAT22AL":
+                return student.hasTaken("ENG06") || block.contains("ENG06");
+        }
+        return false;
+    }
 
-
-
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //FIXME: Add Excel support
 /*

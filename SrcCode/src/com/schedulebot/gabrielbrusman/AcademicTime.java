@@ -36,5 +36,15 @@ public class AcademicTime {
 
     }
 
-
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this){
+            return true;
+        }
+        if (!(obj instanceof AcademicTime)) {
+            return false;
+        }
+        AcademicTime compare = (AcademicTime)obj;
+        return (this.quarter == compare.getQuarter()) && (this.year == compare.getYear());
+    }
 }
