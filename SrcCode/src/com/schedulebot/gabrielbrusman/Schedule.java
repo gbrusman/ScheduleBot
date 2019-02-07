@@ -13,9 +13,6 @@ import org.apache.poi.ss.usermodel.*;
 import java.io.File;
 
 //FIXME: need a way to figure out how to pick 2 quarter-sequence classes or just classes where you have to pick (e.g. 2 out of 3 of x options)
-//FIXME: need a way so that after it's done with required, it can do electives using the same schedule blocks as before
-    //maybe merge into one method call that just loops through required first?
-        //but then it still has to have the same time reverse mechanism
 //FIXME: adding elective classes just adds all non-required classes (relates to above)
 
 /*FIXME: **IMPORTANT** MAIN ISSUES (RELATING TO AFTER)
@@ -34,7 +31,7 @@ public class Schedule {
 
     public Schedule(Student student, ArrayList<Course> classesOffered) {
         this.student = student;
-        this.classesOffered = classesOffered;
+        this.classesOffered = classesOffered; //FIXME: since we have classesByName we can technically get rid of this
         this.schedule = new HashMap<AcademicTime, ScheduleBlock>(12); //max initial capacity needed if no summer sessions
         //FIXME: AFTER
         this.classesByName = new HashMap<String, Course>(55);
@@ -42,24 +39,25 @@ public class Schedule {
             this.classesByName.put(course.getName(), course);
         }
 
-        placeClasses(true);
+        placeClasses();
         System.out.println("done with required!"); //for debugging
-        placeClasses(false);
     }
 
 
 
-    public void placeClasses(boolean required) {
+    public void placeClasses() {
         AcademicTime gradTime = student.getGradTime();
         AcademicTime curTime = student.getCurTime();
         curTime.progressTime(); //don't want it to start on the current quarter, want it to start on the next quarter
         AcademicTime startTime = student.getCurTime(); //FIXME: might not need this
         ArrayList<String> after = new ArrayList<String>(2);
+        int requiredOrElectives = 0; //0 if need to place required, 1 if have placed required, 2 if have placed electives
+        AcademicTime finishTime = student.getGradTime();
+        finishTime.progressTime(); //semantically, we have to be finished by the END of gradTime
 
-
-        while (!curTime.equals(gradTime)) { //for each class that's offered by UC Davis
+        while (!curTime.equals(finishTime)) { //for each class that's offered by UC Davis
             ScheduleBlock curBlock = new ScheduleBlock(curTime);
-
+            requiredOrElectives = 0;
             //add the courses in the after list from the previous quarter
             Course afterCourse;
             for(int i = 0; i < after.size(); i++){
@@ -73,31 +71,35 @@ public class Schedule {
                         System.out.println("Adding: " + afterCourse.getName() + " at " + curTime.getQuarter() + " " + curTime.getYear());
                         after.remove(i);
                         i--; //because we're decreasing the size of the list
+                        //classesOffered.remove(afterCourse); //will this do anything or do I need to override .equals for Course obj?
                     }
                 }
             }
 
-
-            for (Course curCourse : classesOffered) {
-                if(curBlock.getCourses().size() == 2){ //if the current block is full of classes
-                    break; //exit loop so we can move to next quarter and create new block
-                }
-                if (curCourse.isOffered(curTime) && student.hasPrereqs(curCourse) && !student.hasTaken(curCourse.getName()) && student.meetsRecommendations(curCourse)) {
-                    if(required){ //if we're placing required classes, then we have to check if the course is required
-                        if(curCourse.getRequired().get(student.getMajor())){
-                            //place course in the earliest possible quarter
+            while(requiredOrElectives < 2) {
+                for (Course curCourse : classesOffered) {
+                    if (curBlock.getCourses().size() == 2) { //if the current block is full of classes
+                        break; //exit loop so we can move to next quarter and create new block
+                    }
+                    if (curCourse.isOffered(curTime) && student.hasPrereqs(curCourse) && !student.hasTaken(curCourse.getName()) && student.meetsRecommendations(curCourse)) {
+                        if (requiredOrElectives == 0) { //if we're placing required classes, then we have to check if the course is required
+                            if (curCourse.getRequired().get(student.getMajor())) {
+                                //place course in the earliest possible quarter
+                                curBlock.addCourse(curCourse); //adds course to current block
+                                System.out.println("Adding: " + curCourse.getName() + " at " + curTime.getQuarter() + " " + curTime.getYear());
+                                after.add(curCourse.getAfter());
+                                //classesOffered.remove(curCourse);
+                            }
+                        }
+                        else { //we're not only placing require classes, so just place course in the earliest possible quarter (requiredOrElectives == 1)
                             curBlock.addCourse(curCourse); //adds course to current block
                             System.out.println("Adding: " + curCourse.getName() + " at " + curTime.getQuarter() + " " + curTime.getYear());
                             after.add(curCourse.getAfter());
+                            //classesOffered.remove(curCourse);
                         }
                     }
-                    else{ //we're not only placing require classes, so just place course in the earliest possible quarter
-                        curBlock.addCourse(curCourse); //adds course to current block
-                        System.out.println("Adding: " + curCourse.getName() + " at " + curTime.getQuarter() + " " + curTime.getYear());
-                        after.add(curCourse.getAfter());
-                    }
+                    requiredOrElectives++;
                 }
-
             }
             for(Course course: curBlock.getCourses()) {
                 student.getClassesTaken().put(course.getName(), course); //add all of the classes in curBlock to classesTaken (add here to avoid prereq issues)
