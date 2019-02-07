@@ -12,15 +12,14 @@ public class Student {
     private AcademicTime gradTime;
     private AcademicTime startTime;
     private Major major;
-    //private boolean[] prereqsSatisfied; //this way of doing things makes no sense
-    private PriorityQueue interests; //might have to just use array and sort it later
+    private ArrayList<String> interests; //might have to just use array and sort it later
     private boolean isTakingSummerSessions; //not sure if we're doing Summer Sessions or not
     private HashMap<String, Course> classesTaken;
 
 
 
 
-    public Student(AcademicTime curTime, AcademicTime gradTime, Major major, /*boolean[] prereqsSatisfied,*/ PriorityQueue interests, /*boolean isTakingSummerSessions,*/ HashMap<String, Course> classesTaken) {
+    public Student(AcademicTime curTime, AcademicTime gradTime, Major major, ArrayList<String> interests, /*boolean isTakingSummerSessions,*/ HashMap<String, Course> classesTaken) {
         this.curTime = curTime;
         this.gradTime = gradTime;
         //this.isTakingSummerSessions = isTakingSummerSessions;
@@ -60,7 +59,7 @@ public class Student {
         return prereqsSatisfied;
     }*/
 
-    public PriorityQueue getInterests() {
+    public ArrayList<String> getInterests() {
         return interests;
     }
 

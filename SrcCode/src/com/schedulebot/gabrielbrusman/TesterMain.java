@@ -855,7 +855,9 @@ public class TesterMain {
         AcademicTime gradTime = new AcademicTime("Spring", 2023);
         HashMap<String, Course> classesTaken = new HashMap<String, Course>(20);
         classesTaken.put("MAT21A", MAT21A);
-        Student testStu = new Student(curTime, gradTime, Student.Major.LAMA, null, classesTaken);
+        ArrayList<String> testInterests = new ArrayList<String>(4);
+        testInterests.add("Teaching");
+        Student testStu = new Student(curTime, gradTime, Student.Major.LAMA, testInterests, classesTaken);
 
         System.out.println("Creating: ");
         Schedule schedule = new Schedule(testStu, coursesOffered);
