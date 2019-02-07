@@ -54,12 +54,13 @@ public class Schedule {
         int requiredOrElectives = 0; //0 if need to place required, 1 if have placed required, 2 if have placed electives
         AcademicTime finishTime = student.getGradTime();
         finishTime.progressTime(); //semantically, we have to be finished by the END of gradTime
+        Course curCourse;
+        Course afterCourse;
 
         while (!curTime.equals(finishTime)) { //for each class that's offered by UC Davis
             ScheduleBlock curBlock = new ScheduleBlock(curTime);
             requiredOrElectives = 0;
             //add the courses in the after list from the previous quarter
-            Course afterCourse;
             for(int i = 0; i < after.size(); i++){
                 afterCourse = classesByName.get(after.get(i));
 
@@ -71,13 +72,13 @@ public class Schedule {
                         System.out.println("Adding: " + afterCourse.getName() + " at " + curTime.getQuarter() + " " + curTime.getYear());
                         after.remove(i);
                         i--; //because we're decreasing the size of the list
-                        //classesOffered.remove(afterCourse); //will this do anything or do I need to override .equals for Course obj?
+                        classesOffered.remove(afterCourse); //will this do anything or do I need to override .equals for Course obj?
                     }
                 }
             }
-
             while(requiredOrElectives < 2) {
-                for (Course curCourse : classesOffered) {
+                for (int i = 0; i < classesOffered.size(); i++) {
+                    curCourse = classesOffered.get(i);
                     if (curBlock.getCourses().size() == 2) { //if the current block is full of classes
                         break; //exit loop so we can move to next quarter and create new block
                     }
@@ -88,14 +89,16 @@ public class Schedule {
                                 curBlock.addCourse(curCourse); //adds course to current block
                                 System.out.println("Adding: " + curCourse.getName() + " at " + curTime.getQuarter() + " " + curTime.getYear());
                                 after.add(curCourse.getAfter());
-                                //classesOffered.remove(curCourse);
+                                classesOffered.remove(curCourse);
+                                i--; //tp balance index when classes are removed
                             }
                         }
                         else { //we're not only placing require classes, so just place course in the earliest possible quarter (requiredOrElectives == 1)
                             curBlock.addCourse(curCourse); //adds course to current block
                             System.out.println("Adding: " + curCourse.getName() + " at " + curTime.getQuarter() + " " + curTime.getYear());
                             after.add(curCourse.getAfter());
-                            //classesOffered.remove(curCourse);
+                            classesOffered.remove(curCourse);
+                            i--; //to balance index when classes are removed
                         }
                     }
                     requiredOrElectives++;
