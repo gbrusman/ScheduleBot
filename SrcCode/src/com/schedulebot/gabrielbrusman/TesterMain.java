@@ -859,7 +859,7 @@ public class TesterMain {
         classesTaken.put("MAT21A", MAT21A);
         ArrayList<String> testInterests = new ArrayList<String>(4);
         testInterests.add("Teaching");
-        Student testStu = new Student(curTime, gradTime, Student.Major.LMATBS1, testInterests, classesTaken);
+        Student testStu = new Student(curTime, gradTime, Student.Major.LAMA, testInterests, classesTaken);
 
         System.out.println("Creating: ");
         Schedule schedule = new Schedule(testStu, coursesOffered);
