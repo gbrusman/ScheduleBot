@@ -1,9 +1,5 @@
 
-//Get the Excel thing working
-//Learn how to open the file first, then read it.
-
 //v1.0 is just gonna hardcode the data from the spreadsheet into the program
-//FIXME: Reorganize AcademicTime into just year, quarter, throw that into ScheduleBlock Class
 
 package com.schedulebot.gabrielbrusman;
 import java.util.ArrayList;
@@ -18,6 +14,8 @@ import java.io.File;
 //FIXME: for choosing between PHY, CHE, ECN, etc. could just ask at the beginning what they'd prefer to take
     //only need to ask for certain majors though (Applied, BS2)
 
+//FIXME: ***IMPORTANT*** NOT GETTING ALL REQUIRE CLASSES (E.G. LAMA ECS32A)
+
 public class Schedule {
     //data members
     private Student student;
@@ -28,7 +26,7 @@ public class Schedule {
     //constructor
     public Schedule(Student student, ArrayList<Course> classesOffered) {
         this.student = student;
-        this.classesOffered = classesOffered; //FIXME: since we have classesByName we can technically get rid of this
+        this.classesOffered = classesOffered; //FIXME: since we have classes ByName we can technically get rid of this
         this.schedule = new HashMap<AcademicTime, ScheduleBlock>(12); //max initial capacity needed if no summer sessions
         //FIXME: AFTER
         this.classesByName = new HashMap<String, Course>(55);
@@ -38,6 +36,12 @@ public class Schedule {
 
         placeClasses();
         System.out.println("done with required!"); //for debugging
+        if(isSuccess()){
+            System.out.println("SUCCESS!");
+        }
+        else{
+            System.out.println("FAILURE ;(");
+        }
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////
     //main sorting method
@@ -51,6 +55,7 @@ public class Schedule {
         int requiredOrElectives = 0; //0 if need to place required, 1 if have placed required, 2 if have placed electives
         AcademicTime finishTime = student.getGradTime();
         finishTime.progressTime(); //semantically, we have to be finished by the END of gradTime
+        //AcademicTime startTime = new AcademicTime(curTime);
 
 
         while (!curTime.equals(finishTime)) { //while the student hasn't graduated yet
@@ -118,6 +123,7 @@ public void tryToFillCurTime(ScheduleBlock curBlock, ArrayList<String> after, Ac
 
     while(requiredOrElectives < 2) {
         for (int i = 0; i < classesOffered.size(); i++) {
+
             curCourse = classesOffered.get(i);
             if (curBlock.getCourses().size() == 2) { //if the current block is full of classes
                 break; //exit loop so we can move to next quarter and create new block
@@ -150,6 +156,32 @@ public void tryToFillCurTime(ScheduleBlock curBlock, ArrayList<String> after, Ac
         return false;
     }
 
+
+    public boolean isSuccess(){ //loop through student.classesTaken at the end to make sure the schedule meets the requirements
+        ArrayList<String> requirements = new ArrayList<String>(30); //So far only for LAMA
+        requirements.add("MAT21A");
+        requirements.add("MAT21B");
+        requirements.add("MAT21C");
+        requirements.add("MAT21D");
+        requirements.add("MAT22B");
+        requirements.add("ENG06");
+        requirements.add("ECS32A");
+        requirements.add("MAT127A");
+        requirements.add("MAT127B");
+        requirements.add("MAT127C");
+        requirements.add("MAT135A");
+        requirements.add("MAT150A");
+        requirements.add("MAT119A");
+        requirements.add("MAT185A");
+
+        for(String classStr: requirements){
+            if(!student.getClassesTaken().containsKey(classStr)){
+                return false;
+            }
+        }
+
+        return true;
+    }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //FIXME: Add Excel support

@@ -740,7 +740,7 @@ public class TesterMain {
         requiredECN1A.put(Student.Major.LMATBS2, false);
         requiredECN1A.put(Student.Major.LMATAB1, false);
         requiredECN1A.put(Student.Major.LMATAB2, false);
-        requiredECN1A.put(Student.Major.LAMA, false);
+        requiredECN1A.put(Student.Major.LAMA, true); //for debugging (without adding PHY/CHE/BIS support)
         requiredECN1A.put(Student.Major.LMOR, true);
         requiredECN1A.put(Student.Major.LMCOMATH, false);
         requiredECN1A.put(Student.Major.LMCOBIO, false);
@@ -754,7 +754,7 @@ public class TesterMain {
         requiredECN1B.put(Student.Major.LMATBS2, false);
         requiredECN1B.put(Student.Major.LMATAB1, false);
         requiredECN1B.put(Student.Major.LMATAB2, false);
-        requiredECN1B.put(Student.Major.LAMA, false);
+        requiredECN1B.put(Student.Major.LAMA, true); //for debugging (without adding PHY/CHE/BIS support)
         requiredECN1B.put(Student.Major.LMOR, true);
         requiredECN1B.put(Student.Major.LMCOMATH, false);
         requiredECN1B.put(Student.Major.LMCOBIO, false);
@@ -812,6 +812,8 @@ public class TesterMain {
         coursesOffered.add(MAT116);
         coursesOffered.add(MAT118A);
         coursesOffered.add(MAT118B);
+        coursesOffered.add(MAT119A);
+        coursesOffered.add(MAT119B);
         coursesOffered.add(MAT124);
         coursesOffered.add(MAT127A);
         coursesOffered.add(MAT127B);

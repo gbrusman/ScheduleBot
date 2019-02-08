@@ -8,6 +8,12 @@ public class AcademicTime {
         this.year = year;
     }
 
+    //copy constructor
+    public AcademicTime(AcademicTime time){
+        this.quarter = time.getQuarter();
+        this.year = time.getYear();
+    }
+
     private String quarter;
     private int year;
 

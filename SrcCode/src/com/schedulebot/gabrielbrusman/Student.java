@@ -21,13 +21,14 @@ public class Student {
 
     public Student(AcademicTime curTime, AcademicTime gradTime, Major major, ArrayList<String> interests, /*boolean isTakingSummerSessions,*/ HashMap<String, Course> classesTaken) {
         this.curTime = curTime;
+        AcademicTime startTime = new AcademicTime(curTime);
+        this.startTime = startTime;
         this.gradTime = gradTime;
         //this.isTakingSummerSessions = isTakingSummerSessions;
         this.major = major;
        // this.prereqsSatisfied = prereqsSatisfied;
         this.interests = interests;
         this.classesTaken = classesTaken;
-        this.startTime = curTime;
     }
 
     enum Major{
@@ -192,9 +193,9 @@ public class Student {
             case "ECS32A":
                 return startTime != curTime;
             case "MAT108":
-                return hasTaken("MAT21D");
+                return hasTaken("MAT21C");
             case "MAT22A":
-                return hasTaken("MAT21D");
+                return hasTaken("MAT21C");
 
         }
 
