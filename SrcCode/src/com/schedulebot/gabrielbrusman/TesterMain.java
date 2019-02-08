@@ -573,7 +573,7 @@ public class TesterMain {
         required160.put(Student.Major.LMATAB1, false);
         required160.put(Student.Major.LMATAB2, false);
         required160.put(Student.Major.LAMA, false);
-        required160.put(Student.Major.LMOR, false);
+        required160.put(Student.Major.LMOR, true);
         required160.put(Student.Major.LMCOMATH, false);
         required160.put(Student.Major.LMCOBIO, false);
         String[] quartersOffered160 = new String[]{"Spring"};
@@ -607,7 +607,7 @@ public class TesterMain {
         required167.put(Student.Major.LMATAB1, false);
         required167.put(Student.Major.LMATAB2, false);
         required167.put(Student.Major.LAMA, false);
-        required167.put(Student.Major.LMOR, false);
+        required167.put(Student.Major.LMOR, true); //because 160 is required and 167 is prereq for 160
         required167.put(Student.Major.LMCOMATH, false);
         required167.put(Student.Major.LMCOBIO, false);
         String[] quartersOffered167 = new String[]{"Fall", "Winter"};
@@ -859,7 +859,7 @@ public class TesterMain {
         classesTaken.put("MAT21A", MAT21A);
         ArrayList<String> testInterests = new ArrayList<String>(4);
         testInterests.add("Teaching");
-        Student testStu = new Student(curTime, gradTime, Student.Major.LAMA, testInterests, classesTaken);
+        Student testStu = new Student(curTime, gradTime, Student.Major.LMATBS1, testInterests, classesTaken);
 
         System.out.println("Creating: ");
         Schedule schedule = new Schedule(testStu, coursesOffered);

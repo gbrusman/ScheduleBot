@@ -10,11 +10,9 @@ import java.io.File;
 
 //FIXME: need a way to figure out how to pick 2 quarter-sequence classes or just classes where you have to pick (e.g. 2 out of 3 of x options)
     //related to isRedundant
-//FIXME: might want isRedundant function per major, or if statements based on major
+//FIXME: might want isRedundant function per major, or if statements based on major (USING switch currently under cases that differ)
 //FIXME: for choosing between PHY, CHE, ECN, etc. could just ask at the beginning what they'd prefer to take
     //only need to ask for certain majors though (Applied, BS2)
-
-//FIXME: ***IMPORTANT*** NOT GETTING ALL REQUIRE CLASSES (E.G. LAMA ECS32A)
 
 public class Schedule {
     //data members
@@ -26,7 +24,7 @@ public class Schedule {
     //constructor
     public Schedule(Student student, ArrayList<Course> classesOffered) {
         this.student = student;
-        this.classesOffered = classesOffered; //FIXME: since we have classes ByName we can technically get rid of this
+        this.classesOffered = classesOffered; //FIXME: since we have classesByName we can technically get rid of this
         this.schedule = new HashMap<AcademicTime, ScheduleBlock>(12); //max initial capacity needed if no summer sessions
         //FIXME: AFTER
         this.classesByName = new HashMap<String, Course>(55);
@@ -36,7 +34,7 @@ public class Schedule {
 
         placeClasses();
         System.out.println("done with required!"); //for debugging
-        if(isSuccess()){
+        if(isSuccess(student.getMajor())){
             System.out.println("SUCCESS!");
         }
         else{
@@ -128,7 +126,7 @@ public void tryToFillCurTime(ScheduleBlock curBlock, ArrayList<String> after, Ac
             if (curBlock.getCourses().size() == 2) { //if the current block is full of classes
                 break; //exit loop so we can move to next quarter and create new block
             }
-            if (curCourse.isOffered(curTime) && student.hasPrereqs(curCourse) && !student.hasTaken(curCourse.getName()) && student.meetsRecommendations(curCourse) && !isRedundant(curCourse, curBlock)) {
+            if (curCourse.isOffered(curTime) && student.hasPrereqs(curCourse, curBlock) && !student.hasTaken(curCourse.getName()) && student.meetsRecommendations(curCourse) && !isRedundant(curCourse, curBlock)) {
                 if (requiredOrElectives == 0) { //if we're placing required classes, then we have to check if the course is required
                     if (curCourse.getRequired().get(student.getMajor())) {
                         //place course in the earliest possible quarter
@@ -152,12 +150,17 @@ public void tryToFillCurTime(ScheduleBlock curBlock, ArrayList<String> after, Ac
                 return student.hasTaken("MAT22A") || student.hasTaken("MAT108") || block.contains("MAT22A") || block.contains("MAT108");
             case "MAT22AL":
                 return student.hasTaken("ENG06") || block.contains("ENG06");
+            case "ECS32A":
+                if(student.getMajor().equals(Student.Major.LMATAB1)){
+                    return student.hasTaken("ENG06");
+                }
+
         }
         return false;
     }
 
 
-    public boolean isSuccess(){ //loop through student.classesTaken at the end to make sure the schedule meets the requirements
+    public boolean isSuccessLAMA(){
         ArrayList<String> requirements = new ArrayList<String>(30); //So far only for LAMA
         requirements.add("MAT21A");
         requirements.add("MAT21B");
@@ -181,6 +184,135 @@ public void tryToFillCurTime(ScheduleBlock curBlock, ArrayList<String> after, Ac
         }
 
         return true;
+    }
+
+    public boolean isSuccessLMOR(){
+        ArrayList<String> requirements = new ArrayList<String>(30); //So far only for LAMA
+        requirements.add("MAT21A");
+        requirements.add("MAT21B");
+        requirements.add("MAT21C");
+        requirements.add("MAT21D");
+        requirements.add("MAT22B");
+        requirements.add("ENG06");
+        requirements.add("ECN1A");
+        requirements.add("ECN1B");
+        requirements.add("STA32");
+        requirements.add("MAT127A");
+        requirements.add("MAT127B");
+        requirements.add("MAT127C");
+        requirements.add("MAT135A");
+        requirements.add("MAT135B");
+        requirements.add("MAT150A");
+        requirements.add("MAT160");
+        requirements.add("MAT168");
+
+        for(String classStr: requirements){
+            if(!student.getClassesTaken().containsKey(classStr)){
+                System.out.println("Schedule doesn't contain " + classStr + "!");
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public boolean isSuccessLMATAB1(){
+        ArrayList<String> requirements = new ArrayList<String>(30); //So far only for LAMA
+        requirements.add("MAT21A");
+        requirements.add("MAT21B");
+        requirements.add("MAT21C");
+        requirements.add("MAT21D");
+        requirements.add("MAT22B");
+        requirements.add("ENG06");
+        requirements.add("MAT127A");
+        requirements.add("MAT127B");
+        requirements.add("MAT127C");
+        requirements.add("MAT135A");
+        requirements.add("MAT150A");
+
+        for(String classStr: requirements){
+            if(!student.getClassesTaken().containsKey(classStr)){
+                System.out.println("Schedule doesn't contain " + classStr + "!");
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public boolean isSuccessLMATAB2(){
+        ArrayList<String> requirements = new ArrayList<String>(30); //So far only for LAMA
+        requirements.add("MAT21A");
+        requirements.add("MAT21B");
+        requirements.add("MAT21C");
+        requirements.add("MAT21D");
+        requirements.add("MAT22B");
+        requirements.add("ENG06");
+        requirements.add("MAT127A");
+        requirements.add("MAT127B");
+        requirements.add("MAT127C");
+        requirements.add("MAT135A");
+        requirements.add("MAT150A");
+        requirements.add("MAT111");
+        requirements.add("MAT115A");
+        requirements.add("MAT141");
+
+        for(String classStr: requirements){
+            if(!student.getClassesTaken().containsKey(classStr)){
+                System.out.println("Schedule doesn't contain " + classStr + "!");
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public boolean isSuccessLMATBS1(){
+        ArrayList<String> requirements = new ArrayList<String>(30); //So far only for LAMA
+        requirements.add("MAT21A");
+        requirements.add("MAT21B");
+        requirements.add("MAT21C");
+        requirements.add("MAT21D");
+        requirements.add("MAT22B");
+        requirements.add("ENG06");
+        requirements.add("PHY9A");
+        requirements.add("MAT127A");
+        requirements.add("MAT127B");
+        requirements.add("MAT127C");
+        requirements.add("MAT135A");
+        requirements.add("MAT150A");
+        requirements.add("MAT150B");
+        requirements.add("MAT150C");
+        requirements.add("MAT185A");
+
+        for(String classStr: requirements){
+            if(!student.getClassesTaken().containsKey(classStr)){
+                System.out.println("Schedule doesn't contain " + classStr + "!");
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public boolean isSuccess(Student.Major major){ //loop through student.classesTaken at the end to make sure the schedule meets the requirements
+
+        switch(major){
+            case LAMA:
+                return isSuccessLAMA();
+            case LMOR:
+                return isSuccessLMOR();
+            case LMATAB1:
+                return isSuccessLMATAB1();
+            case LMATAB2:
+                return isSuccessLMATAB2();
+            case LMATBS1:
+                return isSuccessLMATBS1();
+        }
+
+
+
+        return false;
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

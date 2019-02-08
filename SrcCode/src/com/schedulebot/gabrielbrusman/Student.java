@@ -73,7 +73,7 @@ public class Student {
 
     //does student have prereqs to take some course
     //When implementing GUI make sure to include "C- or better" "B- or better", etc. esp. for 16/17 series and H classes
-    public boolean hasPrereqs(Course course){ //FIXME: need to include Honors classes probably
+    public boolean hasPrereqs(Course course, ScheduleBlock block){ //FIXME: need to include Honors classes probably
         switch(course.getName()){
             case "MAT21A":
                 return true; //no real prereqs for 21A
@@ -120,11 +120,11 @@ public class Student {
             case "MAT127C":
                 return hasTaken("MAT127B");
             case "MAT128A":
-                return hasTaken("MAT21C") && (hasTaken("ECS32A") || hasTaken("ENG006") || hasTaken("EME005") || hasTaken("ECS30"));
+                return hasTaken("MAT21C") && (hasTaken("ECS32A") || hasTaken("ENG06") || hasTaken("EME05") || hasTaken("ECS30"));
             case "MAT128B":
-                return (hasTaken("MAT22A") || hasTaken("MAT67")) && (hasTaken("ECS32A") || hasTaken("ENG006") || hasTaken("EME005") || hasTaken("ECS30"));
+                return (hasTaken("MAT22A") || hasTaken("MAT67")) && (hasTaken("ECS32A") || hasTaken("ENG06") || hasTaken("EME005") || hasTaken("ECS30"));
             case "MAT128C":
-                return (hasTaken("MAT22A") || hasTaken("MAT67")) && hasTaken("MAT22B") && (hasTaken("ECS32A") || hasTaken("ENG006") || hasTaken("EME005") || hasTaken("ECS30"));
+                return (hasTaken("MAT22A") || hasTaken("MAT67")) && hasTaken("MAT22B") && (hasTaken("ECS32A") || hasTaken("ENG06") || hasTaken("EME05") || hasTaken("ECS30"));
             case "MAT129":
                 return hasTaken("MAT21D") && hasTaken("MAT22B") && (hasTaken("MAT22A") || hasTaken("MAT67")) && hasTaken("MAT127A");
             case "MAT133":
@@ -168,7 +168,7 @@ public class Student {
             case "ECS32A":
                 return true;
             case "ENG06":
-                return (hasTaken("MAT16A") || hasTaken("MAT17A") || hasTaken("MAT21A")) && (hasTaken("MAT16B") || hasTaken("MAT17B") || hasTaken("MAT21B"));
+                return (hasTaken("MAT16A") || hasTaken("MAT17A") || hasTaken("MAT21A")) && (hasTaken("MAT16B") || hasTaken("MAT17B") || (hasTaken("MAT21B") || isTaking("MAT21B", block)));
             case "PHY7A":
                 return true;
             case "PHY9A":
@@ -200,5 +200,12 @@ public class Student {
         }
 
         return true; //if it isn't a special case w/ recommendations
+    }
+
+    public boolean isTaking(String courseName, ScheduleBlock block){
+        if(block.contains(courseName)){
+            return true;
+        }
+        return false;
     }
 }
