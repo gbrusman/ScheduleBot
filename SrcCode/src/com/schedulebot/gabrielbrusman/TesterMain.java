@@ -620,7 +620,7 @@ public class TesterMain {
         //MAT168
         HashMap<Student.Major, Boolean> required168 = new HashMap<Student.Major, Boolean>(8);
         required168.put(Student.Major.LMATBS1, false);
-        required160.put(Student.Major.LMATBS2, false);
+        required168.put(Student.Major.LMATBS2, false);
         required168.put(Student.Major.LMATAB1, false);
         required168.put(Student.Major.LMATAB2, false);
         required168.put(Student.Major.LAMA, false);
@@ -856,10 +856,15 @@ public class TesterMain {
         AcademicTime curTime = new AcademicTime("Fall", 2019);
         AcademicTime gradTime = new AcademicTime("Spring", 2023);
         HashMap<String, Course> classesTaken = new HashMap<String, Course>(20);
+
         classesTaken.put("MAT21A", MAT21A);
+        /*classesTaken.put("MAT21B", MAT21B);
+        classesTaken.put("MAT21C", MAT21C);
+        classesTaken.put("MAT108", MAT108);*/
+
         ArrayList<String> testInterests = new ArrayList<String>(4);
         testInterests.add("Teaching");
-        Student testStu = new Student(curTime, gradTime, Student.Major.LAMA, testInterests, classesTaken);
+        Student testStu = new Student(curTime, gradTime, Student.Major.LMATBS2, testInterests, classesTaken);
 
         System.out.println("Creating: ");
         Schedule schedule = new Schedule(testStu, coursesOffered);

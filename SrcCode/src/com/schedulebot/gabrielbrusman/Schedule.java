@@ -9,7 +9,7 @@ import org.apache.poi.ss.usermodel.*;
 import java.io.File;
 
 //FIXME: need a way to figure out how to pick 2 quarter-sequence classes or just classes where you have to pick (e.g. 2 out of 3 of x options)
-    //related to isRedundant
+    //related to isRedundant, could have case for each of the, say 3, options, and then say don't take it if you've already taken the other 2
 //FIXME: might want isRedundant function per major, or if statements based on major (USING switch currently under cases that differ)
 //FIXME: for choosing between PHY, CHE, ECN, etc. could just ask at the beginning what they'd prefer to take
     //only need to ask for certain majors though (Applied, BS2)
@@ -33,7 +33,6 @@ public class Schedule {
         }
 
         placeClasses();
-        System.out.println("done with required!"); //for debugging
         if(isSuccess(student.getMajor())){
             System.out.println("SUCCESS!");
         }
