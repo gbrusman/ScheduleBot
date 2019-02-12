@@ -1,0 +1,6 @@
+GUI:
+
+-Color coding core vs. enrichment classes
+-Print to PDF
+-Units 
+	- if haven't reached 12 units, say "take 12-x units of non-math classes"

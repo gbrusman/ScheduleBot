@@ -860,11 +860,15 @@ public class TesterMain {
         classesTaken.put("MAT21A", MAT21A);
         /*classesTaken.put("MAT21B", MAT21B);
         classesTaken.put("MAT21C", MAT21C);
-        classesTaken.put("MAT108", MAT108);*/
+        classesTaken.put("MAT108", MAT108);
+        classesTaken.put("ECS32A", ECS32A);
+        classesTaken.put("MAT22A", MAT22A);*/
+
+
 
         ArrayList<String> testInterests = new ArrayList<String>(4);
         testInterests.add("Teaching");
-        Student testStu = new Student(curTime, gradTime, Student.Major.LMATBS2, testInterests, classesTaken);
+        Student testStu = new Student(curTime, gradTime, Student.Major.LMCOBIO, testInterests, classesTaken);
 
         System.out.println("Creating: ");
         Schedule schedule = new Schedule(testStu, coursesOffered);

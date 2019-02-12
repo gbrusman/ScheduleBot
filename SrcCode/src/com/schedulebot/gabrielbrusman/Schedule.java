@@ -150,8 +150,12 @@ public void tryToFillCurTime(ScheduleBlock curBlock, ArrayList<String> after, Ac
             case "MAT22AL":
                 return student.hasTaken("ENG06") || block.contains("ENG06");
             case "ECS32A":
-                if(student.getMajor().equals(Student.Major.LMATAB1)){
+                if(student.getMajor().equals(Student.Major.LMATAB1) || student.getMajor().equals(Student.Major.LMATBS2)){
                     return student.hasTaken("ENG06");
+                }
+            case "MAT180":
+                if(student.getMajor().equals(Student.Major.LMATBS2)){
+                    return true;
                 }
 
         }
@@ -323,6 +327,64 @@ public void tryToFillCurTime(ScheduleBlock curBlock, ArrayList<String> after, Ac
     }
 
 
+    public boolean isSuccessLMCOBIO(){
+        ArrayList<String> requirements = new ArrayList<String>(30); //So far only for LAMA
+        requirements.add("MAT21A");
+        requirements.add("MAT21B");
+        requirements.add("MAT21C");
+        requirements.add("MAT21D");
+        requirements.add("MAT22B");
+        requirements.add("ENG06");
+        requirements.add("ECS32A");
+        requirements.add("MAT127A");
+        requirements.add("MAT127B");
+        requirements.add("MAT127C");
+        requirements.add("MAT128A");
+        requirements.add("MAT128B");
+        requirements.add("MAT128C");
+        requirements.add("MAT135A");
+        requirements.add("MAT150A");
+        requirements.add("MAT124");
+
+        for(String classStr: requirements){
+            if(!student.getClassesTaken().containsKey(classStr)){
+                System.out.println("Schedule doesn't contain " + classStr + "!");
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public boolean isSuccessLMCOMATH(){
+        ArrayList<String> requirements = new ArrayList<String>(30); //So far only for LAMA
+        requirements.add("MAT21A");
+        requirements.add("MAT21B");
+        requirements.add("MAT21C");
+        requirements.add("MAT21D");
+        requirements.add("MAT22B");
+        requirements.add("ENG06");
+        requirements.add("ECS32A");
+        requirements.add("MAT127A");
+        requirements.add("MAT127B");
+        requirements.add("MAT127C");
+        requirements.add("MAT128A");
+        requirements.add("MAT128B");
+        requirements.add("MAT128C");
+        requirements.add("MAT135A");
+        requirements.add("MAT150A");
+        requirements.add("MAT168");
+
+        for(String classStr: requirements){
+            if(!student.getClassesTaken().containsKey(classStr)){
+                System.out.println("Schedule doesn't contain " + classStr + "!");
+                return false;
+            }
+        }
+
+        return true;
+    }
+
     public boolean isSuccess(Student.Major major){ //loop through student.classesTaken at the end to make sure the schedule meets the requirements
 
         switch(major){
@@ -338,6 +400,10 @@ public void tryToFillCurTime(ScheduleBlock curBlock, ArrayList<String> after, Ac
                 return isSuccessLMATBS1();
             case LMATBS2:
                 return isSuccessLMATBS2();
+            case LMCOBIO:
+                return isSuccessLMCOBIO();
+            case LMCOMATH:
+                return isSuccessLMCOMATH();
         }
 
 
