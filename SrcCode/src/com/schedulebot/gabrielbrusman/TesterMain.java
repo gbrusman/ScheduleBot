@@ -2,8 +2,6 @@ package com.schedulebot.gabrielbrusman;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
-//FIXME: infinite loop somewhere in Schedule I think
-//FIXME: adding 108 after 21B because technically they have the prereqs.
 
 public class TesterMain {
 
@@ -868,7 +866,7 @@ public class TesterMain {
 
         ArrayList<String> testInterests = new ArrayList<String>(4);
         testInterests.add("Teaching");
-        Student testStu = new Student(curTime, gradTime, Student.Major.LMCOBIO, testInterests, classesTaken);
+        Student testStu = new Student(curTime, gradTime, Student.Major.LMATBS2, testInterests, classesTaken);
 
         System.out.println("Creating: ");
         Schedule schedule = new Schedule(testStu, coursesOffered);
