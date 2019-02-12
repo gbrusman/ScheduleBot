@@ -20,7 +20,7 @@ public class Schedule {
     private HashMap<AcademicTime, ScheduleBlock> schedule;
     private HashMap<String, Course> classesByName; //FIXME: AFTER
 
-    //private HashMap<String, HashMap<String, Course>> interestTable; //need to be able to pull interests by name, and courses by name
+    private HashMap<String, HashMap<String, Course>> interestTable; //need to be able to pull interests by name, and courses by name
 
     //constructor
     public Schedule(Student student, ArrayList<Course> classesOffered) {
@@ -32,13 +32,19 @@ public class Schedule {
         for(Course course: this.classesOffered){
             this.classesByName.put(course.getName(), course);
         }
-       /* for(Course course: this.classesOffered) {
-          if(course.getInterests() != null){
-              for (String interest : course.getInterests()) { //might throw nullpointer exception
-                  interestTable.get(interest).put(course.getName(), course); //FIXME: need to create each hashmap for ind. interests (we're getting, but never creating)
-              }
-          }*/
 
+        //implement interest list system (this could be made a lot more efficient, could also make it in TesterMain perhaps
+        this.interestTable = new HashMap<String, HashMap<String, Course>>();
+       String[] interests = {"Teaching", "Geometry", "Physics", "Biology", "Computers", "Finance", "Abstract", "Data Analysis"};
+        for(String interest: interests){
+            HashMap<String, Course> curInterest = new HashMap<String, Course>();
+            for (Course course: classesOffered){
+                if( course.getInterests() != null && course.getInterests().contains(interest)){
+                    curInterest.put(course.getName(), course);
+                }
+            }
+            interestTable.put(interest, curInterest);
+        }
 
         placeClasses();
         if(isSuccess(student.getMajor())){
