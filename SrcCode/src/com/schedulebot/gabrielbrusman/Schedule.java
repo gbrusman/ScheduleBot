@@ -142,17 +142,15 @@ public void tryToFillCurTime(ScheduleBlock curBlock, ArrayList<String> after, Ac
                 break; //exit loop so we can move to next quarter and create new block
             }
             if (classIsValid(curCourse, curTime, curBlock)) {
-                if (requiredOrElectives == 0) { //if we're placing required classes, then we have to check if the course is required
-                    if (curCourse.getRequired().get(student.getMajor())) {
-                        //place course in the earliest possible quarter
+                if (requiredOrElectives == 0) {
+                    if (curCourse.getRequired().get(student.getMajor())) { //if we're placing required classes, then we have to check if the course is required
                         addCourseToBlock(curCourse, curBlock, after, curTime);
                         i--; //to balance index when classes are removed
                     }
-                } else { //we're not only placing require classes, so just place course in the earliest possible quarter (requiredOrElectives == 1)
+                } else {
                     placedInterest = tryToPlaceInterestingClass(curCourse, curTime, curBlock, after);
 
                     if(!placedInterest) {
-                        //these two lines actually place the class. We just need to copy and paste where needed and then delete this
                         addCourseToBlock(curCourse, curBlock, after, curTime);
                     }
                     i--; //to balance index
@@ -174,12 +172,33 @@ public void tryToFillCurTime(ScheduleBlock curBlock, ArrayList<String> after, Ac
                 if(student.getMajor().equals(Student.Major.LMATAB1) || student.getMajor().equals(Student.Major.LMATBS2)){
                     return student.hasTaken("ENG06");
                 }
+            case "MAT128A":
+                if(student.getMajor().equals(Student.Major.LAMA)) {
+                    return student.hasTaken("MAT128B") && student.hasTaken("MAT128C");
+                }
+                if(student.getMajor().equals(Student.Major.LMOR) && !student.getInterests().contains("Computers")) {
+                    return student.hasTaken("MAT128B") || student.hasTaken("MAT128C");
+                }
+            case "MAT128B":
+                if(student.getMajor().equals(Student.Major.LAMA) && !student.getInterests().contains("Computers") ) {
+                    return student.hasTaken("MAT128A") && student.hasTaken("MAT128C");
+                }
+                if(student.getMajor().equals(Student.Major.LMOR) && !student.getInterests().contains("Computers")) {
+                    return student.hasTaken("MAT128A") || student.hasTaken("MAT128C");
+                }
+            case "MAT128C":
+                if(student.getMajor().equals(Student.Major.LAMA) && !student.getInterests().contains("Computers")) {
+                    return student.hasTaken("MAT128A") && student.hasTaken("MAT128B");
+                }
+                if(student.getMajor().equals(Student.Major.LMOR) && !student.getInterests().contains("Computers") ) {
+                    return student.hasTaken("MAT128A") || student.hasTaken("MAT128B");
+                }
         }
         return false;
     }
 
 
-
+    //see if there's an "interesting" class that can be placed in the current time
     public boolean tryToPlaceInterestingClass(Course curCourse, AcademicTime curTime, ScheduleBlock curBlock, ArrayList<String> after){
         boolean placedInterest = false;
         //run through interests list
