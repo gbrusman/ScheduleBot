@@ -865,7 +865,9 @@ public class TesterMain {
 
 
         ArrayList<String> testInterests = new ArrayList<String>(4);
-        testInterests.add("Teaching");
+        testInterests.add("Physics");
+        testInterests.add("Computers");
+       // testInterests.add("Teaching");
         Student testStu = new Student(curTime, gradTime, Student.Major.LMATBS2, testInterests, classesTaken);
 
         System.out.println("Creating: ");

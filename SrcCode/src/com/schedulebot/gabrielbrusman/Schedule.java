@@ -2,6 +2,7 @@
 //v1.0 is just gonna hardcode the data from the spreadsheet into the program
 
 package com.schedulebot.gabrielbrusman;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -131,6 +132,7 @@ public void tryToFillCurTime(ScheduleBlock curBlock, ArrayList<String> after, Ac
 
     Course curCourse;
     int requiredOrElectives = 0;
+    boolean placedInterest = false;
 
     while(requiredOrElectives < 2) {
         for (int i = 0; i < classesOffered.size(); i++) {
@@ -139,7 +141,7 @@ public void tryToFillCurTime(ScheduleBlock curBlock, ArrayList<String> after, Ac
             if (curBlock.getCourses().size() == 2) { //if the current block is full of classes
                 break; //exit loop so we can move to next quarter and create new block
             }
-            if (curCourse.isOffered(curTime) && student.hasPrereqs(curCourse, curBlock) && !student.hasTaken(curCourse.getName()) && student.meetsRecommendations(curCourse) && !isRedundant(curCourse, curBlock)) {
+            if (classIsValid(curCourse, curTime, curBlock)) {
                 if (requiredOrElectives == 0) { //if we're placing required classes, then we have to check if the course is required
                     if (curCourse.getRequired().get(student.getMajor())) {
                         //place course in the earliest possible quarter
@@ -147,8 +149,13 @@ public void tryToFillCurTime(ScheduleBlock curBlock, ArrayList<String> after, Ac
                         i--; //to balance index when classes are removed
                     }
                 } else { //we're not only placing require classes, so just place course in the earliest possible quarter (requiredOrElectives == 1)
-                    addCourseToBlock(curCourse, curBlock, after, curTime);
-                    i--; //to balance index when classes are removed
+                    placedInterest = tryToPlaceInterestingClass(curCourse, curTime, curBlock, after);
+
+                    if(!placedInterest) {
+                        //these two lines actually place the class. We just need to copy and paste where needed and then delete this
+                        addCourseToBlock(curCourse, curBlock, after, curTime);
+                    }
+                    i--; //to balance index
                 }
             }
         }
@@ -172,6 +179,48 @@ public void tryToFillCurTime(ScheduleBlock curBlock, ArrayList<String> after, Ac
     }
 
 
+
+    public boolean tryToPlaceInterestingClass(Course curCourse, AcademicTime curTime, ScheduleBlock curBlock, ArrayList<String> after){
+        boolean placedInterest = false;
+        //run through interests list
+        HashMap<String, Course> curInterestTable = new HashMap<String, Course>();
+        for(String interest: student.getInterests()){
+            curInterestTable = interestTable.get(interest);
+
+            //place class if it's in current interest
+            if(curInterestTable.containsValue(curCourse)){
+                addCourseToBlock(curCourse, curBlock, after, curTime);
+
+                placedInterest = true;
+                break;
+            }
+            else{ //see if there's an interesting class that can fit here (super inefficient, I'm well aware)
+                for(Course interestCourse: curInterestTable.values()){
+                    if (classIsValid(interestCourse, curTime, curBlock)){
+                        addCourseToBlock(interestCourse, curBlock, after, curTime);
+
+                        placedInterest = true;
+                        break;
+
+                    }
+                }
+            }
+        }
+        return placedInterest;
+
+    }
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    public boolean classIsValid(Course course, AcademicTime time, ScheduleBlock block) {
+        if (course.isOffered(time) && student.hasPrereqs(course, block) && !student.hasTaken(course.getName()) && student.meetsRecommendations(course) && !isRedundant(course, block) && !block.contains(course.getName())) {
+            return true;
+        }
+        return false;
+    }
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public boolean isSuccessLAMA(){
         ArrayList<String> requirements = new ArrayList<String>(30); //So far only for LAMA
         requirements.add("MAT21A");
