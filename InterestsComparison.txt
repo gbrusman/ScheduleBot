@@ -1,0 +1,183 @@
+Creating: (Interest = Physics)
+Adding: MAT21B at Winter 2020
+Adding: ECS32A at Winter 2020
+Adding: MAT21C at Spring 2020
+Adding: ENG06 at Spring 2020
+Adding: MAT21D at Fall 2020
+Adding: MAT22A at Fall 2020
+Adding: MAT22B at Winter 2021
+Adding: MAT108 at Winter 2021
+Adding: MAT127A at Spring 2021
+Adding: MAT135A at Spring 2021
+Adding: MAT127B at Fall 2021
+Adding: MAT119A at Fall 2021
+Adding: MAT127C at Winter 2022
+Adding: MAT128B at Winter 2022
+Adding: MAT185A at Spring 2022
+Adding: ECN1A at Spring 2022
+Adding: MAT128A at Fall 2022
+Adding: MAT150A at Fall 2022
+Adding: ECN1B at Winter 2023
+Adding: MAT111 at Winter 2023
+Adding: MAT119B at Spring 2023
+Adding: MAT128C at Spring 2023
+SUCCESS!
+com.schedulebot.gabrielbrusman.Schedule@9f70c54
+done
+
+
+
+
+
+
+Creating: (Interest = Teaching) //last quarter is different
+Adding: MAT21B at Winter 2020
+Adding: ECS32A at Winter 2020
+Adding: MAT21C at Spring 2020
+Adding: ENG06 at Spring 2020
+Adding: MAT21D at Fall 2020
+Adding: MAT22A at Fall 2020
+Adding: MAT22B at Winter 2021
+Adding: MAT108 at Winter 2021
+Adding: MAT127A at Spring 2021
+Adding: MAT135A at Spring 2021
+Adding: MAT127B at Fall 2021
+Adding: MAT119A at Fall 2021
+Adding: MAT127C at Winter 2022
+Adding: MAT128B at Winter 2022
+Adding: MAT185A at Spring 2022
+Adding: ECN1A at Spring 2022
+Adding: MAT128A at Fall 2022
+Adding: MAT150A at Fall 2022
+Adding: ECN1B at Winter 2023
+Adding: MAT111 at Winter 2023
+Adding: MAT145 at Spring 2023
+Adding: MAT141 at Spring 2023
+SUCCESS!
+com.schedulebot.gabrielbrusman.Schedule@9f70c54
+done
+
+
+
+
+LMATBS2:
+
+Creating: (Biology, Teaching)
+Adding: MAT21B at Winter 2020
+Adding: ENG06 at Winter 2020
+Adding: MAT21C at Spring 2020
+Adding: PHY7A at Spring 2020
+Adding: MAT21D at Fall 2020
+Adding: MAT22A at Fall 2020
+Adding: MAT22B at Winter 2021
+Adding: MAT108 at Winter 2021
+Adding: MAT127A at Spring 2021
+Adding: MAT135A at Spring 2021
+Adding: MAT127B at Fall 2021
+Adding: MAT115A at Fall 2021
+Adding: MAT127C at Winter 2022
+Adding: MAT111 at Winter 2022
+Adding: MAT141 at Spring 2022
+Adding: MAT180 at Spring 2022
+Adding: MAT150A at Fall 2022
+Adding: MAT145 at Fall 2022
+Adding: MAT167 at Winter 2023
+Adding: MAT115B at Winter 2023
+Adding: MAT128C at Spring 2023
+Adding: MAT135B at Spring 2023
+SUCCESS!
+com.schedulebot.gabrielbrusman.Schedule@9f70c54
+done
+
+
+
+
+Creating: 
+Adding: MAT21B at Winter 2020
+Adding: ENG06 at Winter 2020
+Adding: MAT21C at Spring 2020
+Adding: PHY7A at Spring 2020
+Adding: MAT21D at Fall 2020
+Adding: MAT22A at Fall 2020
+Adding: MAT22B at Winter 2021
+Adding: MAT108 at Winter 2021
+Adding: MAT127A at Spring 2021
+Adding: MAT135A at Spring 2021
+Adding: MAT127B at Fall 2021
+Adding: MAT115A at Fall 2021
+Adding: MAT127C at Winter 2022
+Adding: MAT111 at Winter 2022
+Adding: MAT141 at Spring 2022
+Adding: MAT180 at Spring 2022
+Adding: MAT150A at Fall 2022
+Adding: MAT118A at Fall 2022
+Adding: MAT114 at Winter 2023
+Adding: MAT115B at Winter 2023
+Adding: MAT128C at Spring 2023
+Adding: MAT135B at Spring 2023
+SUCCESS!
+com.schedulebot.gabrielbrusman.Schedule@234bef66
+done
+
+Process finished with exit code 0
+
+
+Creating: (Computers)
+Adding: MAT21B at Winter 2020
+Adding: ENG06 at Winter 2020
+Adding: MAT21C at Spring 2020
+Adding: PHY7A at Spring 2020
+Adding: MAT21D at Fall 2020
+Adding: MAT22A at Fall 2020
+Adding: MAT22B at Winter 2021
+Adding: MAT108 at Winter 2021
+Adding: MAT127A at Spring 2021
+Adding: MAT135A at Spring 2021
+Adding: MAT127B at Fall 2021
+Adding: MAT115A at Fall 2021
+Adding: MAT127C at Winter 2022
+Adding: MAT111 at Winter 2022
+Adding: MAT141 at Spring 2022
+Adding: MAT180 at Spring 2022
+Adding: MAT150A at Fall 2022
+Adding: MAT165 at Fall 2022
+Adding: MAT168 at Winter 2023
+Adding: MAT128B at Winter 2023
+Adding: MAT128C at Spring 2023
+Adding: MAT135B at Spring 2023
+SUCCESS!
+com.schedulebot.gabrielbrusman.Schedule@9f70c54
+done
+
+
+Creating: (Physics, Computers)
+Adding: MAT21B at Winter 2020
+Adding: ENG06 at Winter 2020
+Adding: MAT21C at Spring 2020
+Adding: PHY7A at Spring 2020
+Adding: MAT21D at Fall 2020
+Adding: MAT22A at Fall 2020
+Adding: MAT22B at Winter 2021
+Adding: MAT108 at Winter 2021
+Adding: MAT127A at Spring 2021
+Adding: MAT135A at Spring 2021
+Adding: MAT127B at Fall 2021
+Adding: MAT115A at Fall 2021
+Adding: MAT127C at Winter 2022
+Adding: MAT111 at Winter 2022
+Adding: MAT141 at Spring 2022
+Adding: MAT180 at Spring 2022
+Adding: MAT150A at Fall 2022
+Adding: MAT118A at Fall 2022
+Adding: MAT119A at Winter 2023
+Adding: MAT168 at Winter 2023
+Adding: MAT119B at Spring 2023
+Adding: MAT128C at Spring 2023
+SUCCESS!
+com.schedulebot.gabrielbrusman.Schedule@9f70c54
+done
+
+
+
+
+

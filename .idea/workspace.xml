@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fc400268-09ed-4ef1-b521-602fb3bd375a" name="Default Changelist" comment="" />
+    <list default="true" id="fc400268-09ed-4ef1-b521-602fb3bd375a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/SrcCode/src/com/schedulebot/gabrielbrusman/ScheduleGUI.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SrcCode/src/com/schedulebot/gabrielbrusman/ScheduleGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SrcCode/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SrcCode/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SrcCode/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SrcCode/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SrcCode/out/production/SrcCode/com/schedulebot/gabrielbrusman/AcademicTime.class" beforeDir="false" afterPath="$PROJECT_DIR$/SrcCode/out/production/SrcCode/com/schedulebot/gabrielbrusman/AcademicTime.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SrcCode/out/production/SrcCode/com/schedulebot/gabrielbrusman/Schedule.class" beforeDir="false" afterPath="$PROJECT_DIR$/SrcCode/out/production/SrcCode/com/schedulebot/gabrielbrusman/Schedule.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SrcCode/out/production/SrcCode/com/schedulebot/gabrielbrusman/ScheduleBlock.class" beforeDir="false" afterPath="$PROJECT_DIR$/SrcCode/out/production/SrcCode/com/schedulebot/gabrielbrusman/ScheduleBlock.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SrcCode/out/production/SrcCode/com/schedulebot/gabrielbrusman/ScheduleGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/SrcCode/out/production/SrcCode/com/schedulebot/gabrielbrusman/ScheduleGUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SrcCode/out/production/SrcCode/com/schedulebot/gabrielbrusman/Student$Major.class" beforeDir="false" afterPath="$PROJECT_DIR$/SrcCode/out/production/SrcCode/com/schedulebot/gabrielbrusman/Student$Major.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SrcCode/out/production/SrcCode/com/schedulebot/gabrielbrusman/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/SrcCode/out/production/SrcCode/com/schedulebot/gabrielbrusman/Student.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SrcCode/out/production/SrcCode/com/schedulebot/gabrielbrusman/TesterMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/SrcCode/out/production/SrcCode/com/schedulebot/gabrielbrusman/TesterMain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SrcCode/src/ScheduleGUI.form" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SrcCode/src/ScheduleGUI.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SrcCode/src/com/schedulebot/gabrielbrusman/AcademicTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/SrcCode/src/com/schedulebot/gabrielbrusman/AcademicTime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SrcCode/src/com/schedulebot/gabrielbrusman/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/SrcCode/src/com/schedulebot/gabrielbrusman/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SrcCode/src/com/schedulebot/gabrielbrusman/TesterMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/SrcCode/src/com/schedulebot/gabrielbrusman/TesterMain.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -9,7 +26,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SrcCode/src/com/schedulebot/gabrielbrusman/Course.java">
           <provider selected="true" editor-type-id="text-editor" />
@@ -18,7 +35,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SrcCode/src/com/schedulebot/gabrielbrusman/Schedule.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-323" />
+            <state>
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
           </provider>
         </entry>
       </file>
@@ -44,6 +65,9 @@
       </file>
     </leaf>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="10" />
     <option name="y" value="20" />
@@ -55,6 +79,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -101,8 +127,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -136,28 +160,23 @@
       <option name="presentableId" value="Default" />
       <updated>1549307000058</updated>
       <workItem from="1549307019009" duration="730000" />
+      <workItem from="1550621340948" duration="17000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="730000" />
+    <option name="totallyTimeSpent" value="747000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info id="Image Layers" />
-      <window_info id="Designer" />
-      <window_info id="UI Designer" />
-      <window_info id="Capture Tool" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24962178" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25340393" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -165,15 +184,21 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Maven" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Maven" order="6" />
+      <window_info anchor="right" id="Capture Analysis" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -183,21 +208,25 @@
     <entry file="file://$PROJECT_DIR$/SrcCode/src/com/schedulebot/gabrielbrusman/Course.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/SrcCode/src/com/schedulebot/gabrielbrusman/ScheduleBlock.java">
+    <entry file="file://$PROJECT_DIR$/SrcCode/src/com/schedulebot/gabrielbrusman/TesterMain.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/SrcCode/src/com/schedulebot/gabrielbrusman/Student.java">
+    <entry file="file://$PROJECT_DIR$/SrcCode/src/com/schedulebot/gabrielbrusman/ScheduleBlock.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/SrcCode/src/com/schedulebot/gabrielbrusman/AcademicTime.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/SrcCode/src/com/schedulebot/gabrielbrusman/TesterMain.java">
+    <entry file="file://$PROJECT_DIR$/SrcCode/src/com/schedulebot/gabrielbrusman/Student.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/SrcCode/src/com/schedulebot/gabrielbrusman/Schedule.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-323" />
+        <state>
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
   </component>
