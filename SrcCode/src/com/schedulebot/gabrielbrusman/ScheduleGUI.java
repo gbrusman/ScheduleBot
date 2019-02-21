@@ -1,11 +1,28 @@
 package com.schedulebot.gabrielbrusman;
-import java.lang.reflect.Array;
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class TesterMain {
+public class ScheduleGUI {
+    private JPanel tabContainer;
+    private JTabbedPane basicData;
+    private JComboBox majorOptions;
+    private JCheckBox MAT21ACheckBox;
+    private JCheckBox MAT21CCheckBox;
+    private JCheckBox MAT21BCheckBox;
+    private JCheckBox MAT21DCheckBox;
+    private JCheckBox MAT22ACheckBox;
+    private JCheckBox MAT22ALCheckBox;
+    private JCheckBox MAT22BCheckBox;
+    private JCheckBox MAT67CheckBox;
+    private JCheckBox MAT108CheckBox;
 
-    public static void main(String[] args){
+
+    public ScheduleGUI() {
+        Student student = new Student();
+
         //load in the class data manually
 
         //MAT21A
@@ -850,35 +867,39 @@ public class TesterMain {
 
 
 
-        //setting up the student and schedule
-        AcademicTime curTime = new AcademicTime("Fall", 2019);
-        AcademicTime gradTime = new AcademicTime("Spring", 2023);
-        HashMap<String, Course> classesTaken = new HashMap<String, Course>(20);
-
-        classesTaken.put("MAT21A", MAT21A);
-        /*classesTaken.put("MAT21B", MAT21B);
-        classesTaken.put("MAT21C", MAT21C);
-        classesTaken.put("MAT108", MAT108);
-        classesTaken.put("ECS32A", ECS32A);
-        classesTaken.put("MAT22A", MAT22A);*/
 
 
+        MAT21ACheckBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //student.getClassesTaken().put("MAT21A", MAT21A);
+            }
+        });
+        MAT21BCheckBox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
 
-        ArrayList<String> testInterests = new ArrayList<String>(4);
-        //testInterests.add("Physics");
-        testInterests.add("Computers");
-        //testInterests.add("Teaching");
-        Student testStu = new Student(curTime, gradTime, Student.Major.LAMA, testInterests, classesTaken);
-
-        System.out.println("Creating: ");
-        Schedule schedule = new Schedule(testStu, coursesOffered);
-
-        System.out.println(schedule);
-        System.out.println("done");
+            }
+        });
     }
 
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("ScheduleGUI");
+
+        /*JPanel tabContainer = new JPanel();
+        JTabbedPane tabbedPane = new JTabbedPane();
+        JComboBox<String> majorChoice = new JComboBox<String>();
+        majorChoice.addItem("AB Plan 1");
+        tabbedPane.add(majorChoice);
+        tabContainer.add(tabbedPane);
+        frame.add(tabContainer);*/
 
 
+        frame.setContentPane(new ScheduleGUI().tabContainer);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
     }
 
+}
 

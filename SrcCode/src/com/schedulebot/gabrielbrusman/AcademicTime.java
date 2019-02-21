@@ -14,6 +14,10 @@ public class AcademicTime {
         this.year = time.getYear();
     }
 
+    public AcademicTime(){
+
+    }
+
     private String quarter;
     private int year;
 

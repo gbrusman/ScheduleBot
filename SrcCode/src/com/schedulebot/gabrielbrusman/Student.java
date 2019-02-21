@@ -31,6 +31,12 @@ public class Student {
         this.classesTaken = classesTaken;
     }
 
+    public Student(){
+        this.startTime = new AcademicTime();
+        this.interests = new ArrayList<String>();
+        this.classesTaken = new HashMap<String, Course>();
+    }
+
     enum Major{
         LMATBS1, LMATBS2, LMATAB1, LMATAB2, LAMA, LMOR, LMCOMATH, LMCOBIO;
     }

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.schedulebot.gabrielbrusman.ScheduleGUI">
+  <grid id="27dc6" binding="tabContainer" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="678" height="485"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <tabbedpane id="fc485" binding="basicData">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false">
+            <preferred-size width="200" height="200"/>
+          </grid>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <grid id="e0eb5" layout-manager="GridLayoutManager" row-count="3" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <tabbedpane title="Welcome!"/>
+            </constraints>
+            <properties>
+              <enabled value="true"/>
+            </properties>
+            <border type="none"/>
+            <children>
+              <component id="5b99a" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Welcome to ScheduleBot. Please select your major from the options below."/>
+                </properties>
+              </component>
+              <vspacer id="182cb">
+                <constraints>
+                  <grid row="1" column="1" row-span="2" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+                </constraints>
+              </vspacer>
+              <component id="977ac" class="javax.swing.JComboBox" binding="majorOptions">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="0" fill="0" indent="0" use-parent-layout="false">
+                    <minimum-size width="300" height="15"/>
+                    <preferred-size width="650" height="20"/>
+                  </grid>
+                </constraints>
+                <properties>
+                  <editable value="false"/>
+                  <enabled value="true"/>
+                  <model>
+                    <item value="AB Mathematics Plan 1 - General Mathematics"/>
+                    <item value="AB Mathematics Plan 2 - Secondary Teaching"/>
+                    <item value="BS Mathematics Plan 1 - General Mathematics"/>
+                    <item value="BS Mathematics Plan 2 - Secondary Teaching"/>
+                    <item value="BS Applied Mathematics"/>
+                    <item value="BS Mathematical Analytics and Operations Research"/>
+                    <item value="BS Mathematical and Scientific Computation - Computational and Mathematical Biology Emphasis"/>
+                    <item value="BS Mathematical and Scientific Computation - Computational and Mathematics Emphasis"/>
+                  </model>
+                </properties>
+              </component>
+            </children>
+          </grid>
+          <grid id="c3b85" layout-manager="GridLayoutManager" row-count="12" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <tabbedpane title="Basic Data"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="70a11" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Please select what classes you have taken (or are currently taking) from the options below."/>
+                </properties>
+              </component>
+              <component id="f3232" class="javax.swing.JCheckBox" binding="MAT21ACheckBox" default-binding="true">
+                <constraints>
+                  <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="MAT21A"/>
+                  <verticalAlignment value="1"/>
+                </properties>
+              </component>
+              <component id="eb043" class="javax.swing.JCheckBox" binding="MAT21BCheckBox">
+                <constraints>
+                  <grid row="2" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="1" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="MAT21B"/>
+                </properties>
+              </component>
+              <component id="67912" class="javax.swing.JCheckBox" binding="MAT21CCheckBox" default-binding="true">
+                <constraints>
+                  <grid row="3" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="MAT21C"/>
+                </properties>
+              </component>
+              <component id="ef3fa" class="javax.swing.JCheckBox" binding="MAT21DCheckBox">
+                <constraints>
+                  <grid row="4" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="MAT21D"/>
+                </properties>
+              </component>
+              <component id="3f269" class="javax.swing.JCheckBox" binding="MAT22ACheckBox">
+                <constraints>
+                  <grid row="5" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="MAT22A"/>
+                </properties>
+              </component>
+              <component id="c1d83" class="javax.swing.JCheckBox" binding="MAT22ALCheckBox">
+                <constraints>
+                  <grid row="6" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="MAT22AL"/>
+                </properties>
+              </component>
+              <component id="d950a" class="javax.swing.JCheckBox" binding="MAT22BCheckBox">
+                <constraints>
+                  <grid row="7" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="MAT22B"/>
+                </properties>
+              </component>
+              <component id="15df2" class="javax.swing.JCheckBox" binding="MAT67CheckBox">
+                <constraints>
+                  <grid row="8" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="MAT67"/>
+                </properties>
+              </component>
+              <component id="3a3fb" class="javax.swing.JCheckBox" binding="MAT108CheckBox">
+                <constraints>
+                  <grid row="9" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="MAT108"/>
+                </properties>
+              </component>
+              <component id="dfe68" class="javax.swing.JCheckBox">
+                <constraints>
+                  <grid row="10" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="MAT111"/>
+                </properties>
+              </component>
+              <component id="5c44a" class="javax.swing.JCheckBox">
+                <constraints>
+                  <grid row="11" column="0" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="MAT114"/>
+                </properties>
+              </component>
+              <component id="260b4" class="javax.swing.JCheckBox">
+                <constraints>
+                  <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="MAT114"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
+        </children>
+      </tabbedpane>
+    </children>
+  </grid>
+</form>
