@@ -872,13 +872,13 @@ public class ScheduleGUI {
         MAT21ACheckBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //student.getClassesTaken().put("MAT21A", MAT21A);
+                student.getClassesTaken().put("MAT21A", MAT21A);
             }
         });
         MAT21BCheckBox.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                student.getClassesTaken().put("MAT21B", MAT21B);
             }
         });
     }
