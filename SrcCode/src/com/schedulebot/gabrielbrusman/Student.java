@@ -72,6 +72,9 @@ public class Student {
 
     public HashMap<String, Course> getClassesTaken() { return classesTaken;}
 
+    public void setMajor(Major major) {
+        this.major = major;
+    }
 
     public boolean hasTaken(String courseName){
        return classesTaken.containsKey(courseName);
