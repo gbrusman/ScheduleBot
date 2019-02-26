@@ -2,24 +2,35 @@ package com.schedulebot.gabrielbrusman;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
+import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Observable;
+import java.util.Set;
+
 
 import static com.schedulebot.gabrielbrusman.Student.Major.*;
 
 public class Controller {
-    public TextArea myTextArea;
     public Student myStudent = new Student();
     public HashMap<String, Course> classesByName = new HashMap<String, Course>(55);
     public ArrayList<Course> coursesOffered = new ArrayList<Course>(55);
-    public ComboBox<String> majorComboBox = new ComboBox<String>();
-    public Button nextFromMajSelect;
+    @FXML public ComboBox<String> majorComboBox = new ComboBox<String>();
+    @FXML public Button majSelectNxt;
+    @FXML public GridPane courseSelectGPane;
+    public Set courseCBoxList;
+    public CheckBox[] courseCBoxArr = new CheckBox[60];
+    public Scene scene;
+
 
     public void initialize(){
         //MAT21A
@@ -879,7 +890,7 @@ public class Controller {
         majorComboBox.setItems(majors);
 
     }
-
+////////////////////////////////////////////////////////////////// end init for majSelect
     //used by next button on first scene
     public void setSelectedMajor(){
         int selectedIndex = majorComboBox.getSelectionModel().getSelectedIndex();
@@ -894,6 +905,34 @@ public class Controller {
         majorMap.put(7, LMCOMATH);
 
         myStudent.setMajor(majorMap.get(selectedIndex));
+        switchScene("courseselect.fxml"); //move to course select screen
+    }
+
+    //switches to new scene based on fxml file name input
+    public void switchScene(String fxml){
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
+            Stage stage = (Stage) majSelectNxt.getScene().getWindow();
+            scene = new Scene(loader.load());
+            stage.setScene(scene);
+        }catch (IOException io){
+            io.printStackTrace();
+        }
+    }
+
+    //for checkboxes, make list of all of them, loop through, if true, get its text and add it to classesTaken from classesByName
+    //FIXME: isSelected() is null by default, need to set all to false by default, or use ChangeListener or something?
+    public void addClassesToTaken(){
+        courseCBoxList = courseSelectGPane.lookupAll("CheckBox"); //get all checkboxes in scene
+        courseCBoxList.toArray(courseCBoxArr);
+        for(int i = 0; i < courseCBoxArr.length; i++){
+            if(courseCBoxArr[i].isSelected()){ //look at all selected checkboxes
+                myStudent.getClassesTaken().put(courseCBoxArr[i].getText(), classesByName.get(courseCBoxArr[i].getText())); //add their text to classesTaken
+                System.out.println(courseCBoxArr[i].getText());
+            }
+        }
+
+        //myStudent.getClassesTaken().put(courseName, classesByName.get(courseName));
     }
 
 }
