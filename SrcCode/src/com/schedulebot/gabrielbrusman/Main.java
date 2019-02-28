@@ -17,6 +17,8 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("majselect.fxml"));
         stage.setTitle("ScheduleBot");
         stage.setScene(new Scene(root, 300, 275));
+        stage.setMinWidth(500);
+        stage.setMinHeight(500);
         stage.show();
     }
 
@@ -24,7 +26,7 @@ public class Main extends Application {
         Parent page = (Parent) FXMLLoader.load(getClass().getResource(fxml), null, new JavaFXBuilderFactory());
         Scene scene = stage.getScene();
         if (scene == null) {
-            scene = new Scene(page, 700, 450);
+            scene = new Scene(page,700, 450);
             stage.setScene(scene);
         } else {
             stage.getScene().setRoot(page);

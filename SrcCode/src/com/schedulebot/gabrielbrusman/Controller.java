@@ -5,10 +5,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
@@ -27,6 +24,11 @@ public class Controller {
     @FXML public ComboBox<String> majorComboBox = new ComboBox<String>();
     @FXML public Button majSelectNxt;
     @FXML public GridPane courseSelectGPane;
+    @FXML public ComboBox<String> curQuarterBox = new ComboBox<String>();
+    @FXML public ComboBox<String> gradQuarterBox = new ComboBox<String>();
+    @FXML public TextField curYearField = new TextField();
+    @FXML public TextField gradYearField = new TextField();
+    @FXML public Label majSelectErrorLabel;
     public Set courseCBoxList;
     public CheckBox[] courseCBoxArr = new CheckBox[60];
     public Scene scene;
@@ -889,9 +891,15 @@ public class Controller {
         );
         majorComboBox.setItems(majors);
 
+        ObservableList<String> quarters = FXCollections.observableArrayList("Fall", "Winter", "Spring");
+        curQuarterBox.setItems(quarters);
+        gradQuarterBox.setItems(quarters);
+
+
+
     }
 ////////////////////////////////////////////////////////////////// end init for majSelect
-    //used by next button on first scene
+    //used by NEXT BUTTON on FIRST SCENE
     public void setSelectedMajor(){
         int selectedIndex = majorComboBox.getSelectionModel().getSelectedIndex();
         HashMap<Integer, Student.Major> majorMap= new HashMap<Integer, Student.Major>(8);
@@ -904,10 +912,52 @@ public class Controller {
         majorMap.put(6, LMCOBIO);
         majorMap.put(7, LMCOMATH);
 
-        myStudent.setMajor(majorMap.get(selectedIndex));
-        switchScene("courseselect.fxml"); //move to course select screen
+        //need to make sure every field isn't empty
+        if(isValidInput() ){
+            myStudent.setMajor(majorMap.get(selectedIndex));
+            switchScene("courseselect.fxml"); //move to course select screen
+        }
+        else{
+            majSelectErrorLabel.setVisible(true);
+        }
+
+    }
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    public boolean isInteger(String str){
+        if(str.matches("-?\\d+")) { //regular expression to make sure string is an integer
+            return true;
+        }
+        return false;
     }
 
+    public boolean isValidInput(){
+        if(checkIfNullMajSelect()){
+            return false;
+        }
+       else if(!isInteger(gradYearField.getText()) || !isInteger(curYearField.getText())){
+           majSelectErrorLabel.setText("Year values must be integers!");
+           return false;
+        }
+       else if(Integer.parseInt(gradYearField.getText()) < Integer.parseInt(curYearField.getText())){
+            majSelectErrorLabel.setText("Current year is greater than grad year!");
+            return false;
+        }
+
+        return true;
+    }
+
+    public boolean checkIfNullMajSelect(){
+        if(majorComboBox.getSelectionModel().isEmpty() || curQuarterBox.getSelectionModel().isEmpty() || gradQuarterBox.getSelectionModel().isEmpty()){
+            return true;
+        }
+        if(curYearField.getText() == null || curYearField.getText().isEmpty()){
+            return true;
+        }
+        if(gradYearField.getText() == null || gradYearField.getText().isEmpty()){
+            return true;
+        }
+        return false;
+    }
     //switches to new scene based on fxml file name input
     public void switchScene(String fxml){
         try {
