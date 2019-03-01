@@ -18,23 +18,23 @@ import java.util.Set;
 import static com.schedulebot.gabrielbrusman.Student.Major.*;
 
 public class Controller {
-    public Student myStudent = new Student();
-    public HashMap<String, Course> classesByName = new HashMap<String, Course>(55);
-    public ArrayList<Course> coursesOffered = new ArrayList<Course>(55);
-    @FXML public ComboBox<String> majorComboBox = new ComboBox<String>();
-    @FXML public Button majSelectNxt;
-    @FXML public GridPane courseSelectGPane;
-    @FXML public ComboBox<String> curQuarterBox = new ComboBox<String>();
-    @FXML public ComboBox<String> gradQuarterBox = new ComboBox<String>();
-    @FXML public TextField curYearField = new TextField();
-    @FXML public TextField gradYearField = new TextField();
-    @FXML public Label majSelectErrorLabel;
-    public Set courseCBoxList;
-    public CheckBox[] courseCBoxArr = new CheckBox[60];
-    public Scene scene;
+    private Student myStudent = new Student();
+    private HashMap<String, Course> classesByName = new HashMap<String, Course>(55);
+    private ArrayList<Course> coursesOffered = new ArrayList<Course>(55);
+    @FXML private ComboBox<String> majorComboBox = new ComboBox<String>();
+    @FXML private Button majSelectNxt;
+    //@FXML private GridPane courseSelectGPane;
+    @FXML private ComboBox<String> curQuarterBox = new ComboBox<String>();
+    @FXML private ComboBox<String> gradQuarterBox = new ComboBox<String>();
+    @FXML private TextField curYearField = new TextField();
+    @FXML private TextField gradYearField = new TextField();
+    @FXML private Label majSelectErrorLabel;
+    //private Set courseCBoxList;
+    //private CheckBox[] courseCBoxArr = new CheckBox[60];
+    private Scene scene;
 
-
-    public void initialize(){
+    //fill courses database
+    public void initCourses(){
         //MAT21A
         HashMap<Student.Major, Boolean> required21A= new HashMap<Student.Major, Boolean>(8);
         required21A.put(LMATBS1, true);
@@ -878,8 +878,11 @@ public class Controller {
         for(Course course: coursesOffered){
             classesByName.put(course.getName(), course);
         }
+    }
 
-        ObservableList<String> majors = FXCollections.observableArrayList(
+    public void initialize(){
+       initCourses();
+       ObservableList<String> majors = FXCollections.observableArrayList(
                 "AB Mathematics: General Mathematics",
                 "AB Mathematics: Secondary Teaching",
                 "BS Mathematics: General Mathematics",
@@ -888,7 +891,7 @@ public class Controller {
                 "BS Mathematical Analytics and Operations Research",
                 "BS Mathematical and Scientific Computation - Computational and Mathematical Biology Emphasis",
                 "BS Mathematical and Scientific Computation - Computational and Mathematics Emphasis"
-        );
+       );
         majorComboBox.setItems(majors);
 
         ObservableList<String> quarters = FXCollections.observableArrayList("Fall", "Winter", "Spring");
@@ -924,10 +927,7 @@ public class Controller {
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public boolean isInteger(String str){
-        if(str.matches("-?\\d+")) { //regular expression to make sure string is an integer
-            return true;
-        }
-        return false;
+        return str.matches("-?\\d+"); //regular expression to make sure string is an integer
     }
 
     public boolean isValidInput(){
@@ -971,11 +971,10 @@ public class Controller {
     }
 
     //for checkboxes, make list of all of them, loop through, if true, get its text and add it to classesTaken from classesByName
-    //FIXME: isSelected() is null by default, need to set all to false by default, or use ChangeListener or something?
-    public void addClassesToTaken(){
+   /* public void addClassesToTaken(){
         courseCBoxList = courseSelectGPane.lookupAll("CheckBox"); //get all checkboxes in scene
         courseCBoxList.toArray(courseCBoxArr);
-        for(int i = 0; i < courseCBoxArr.length; i++){
+        for(int i = 0; i < 4; i++){ //FIXME: put exact size in i < x otherwise get nullpointer exception
             if(courseCBoxArr[i].isSelected()){ //look at all selected checkboxes
                 myStudent.getClassesTaken().put(courseCBoxArr[i].getText(), classesByName.get(courseCBoxArr[i].getText())); //add their text to classesTaken
                 System.out.println(courseCBoxArr[i].getText());
@@ -983,6 +982,6 @@ public class Controller {
         }
 
         //myStudent.getClassesTaken().put(courseName, classesByName.get(courseName));
-    }
+    }*/ 
 
 }
