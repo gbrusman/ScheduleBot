@@ -918,7 +918,7 @@ public class Controller {
         //need to make sure every field isn't empty
         if(isValidInput() ){
             myStudent.setMajor(majorMap.get(selectedIndex));
-            switchScene("courseselect.fxml"); //move to course select screen
+            switchSceneForwards("courseselect.fxml"); //move to course select screen
         }
         else{
             majSelectErrorLabel.setVisible(true);
@@ -959,15 +959,18 @@ public class Controller {
         return false;
     }
     //switches to new scene based on fxml file name input
-    public void switchScene(String fxml){
+    public void switchSceneForwards(String fxml){
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
             Stage stage = (Stage) majSelectNxt.getScene().getWindow();
             scene = new Scene(loader.load());
             stage.setScene(scene);
+            CourseSelectController controller = loader.<CourseSelectController>getController();
+            controller.initData(myStudent, classesByName, coursesOffered);
         }catch (IOException io){
             io.printStackTrace();
         }
+
     }
 
     //for checkboxes, make list of all of them, loop through, if true, get its text and add it to classesTaken from classesByName
@@ -982,6 +985,6 @@ public class Controller {
         }
 
         //myStudent.getClassesTaken().put(courseName, classesByName.get(courseName));
-    }*/ 
+    }*/
 
 }

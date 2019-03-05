@@ -22,8 +22,12 @@ public class CourseSelectController {
     @FXML
     private GridPane courseSelectGPane;
 
-    public void initialize(){
+    public void initialize(){}
 
+    public void initData(Student student, HashMap<String, Course> classesByName, ArrayList<Course> coursesOffered){
+        this.myStudent = student;
+        this.classesByName = classesByName;
+        this.coursesOffered = coursesOffered;
     }
 
     //for checkboxes, make list of all of them, loop through, if true, get its text and add it to classesTaken from classesByName
@@ -36,6 +40,7 @@ public class CourseSelectController {
                 System.out.println(courseCBoxArr[i].getText());
             }
         }
+        System.out.println(myStudent.getMajor());
 
         //myStudent.getClassesTaken().put(courseName, classesByName.get(courseName));
     }
