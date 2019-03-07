@@ -18,6 +18,7 @@ import java.util.Set;
 import static com.schedulebot.gabrielbrusman.Student.Major.*;
 
 public class Controller {
+    private Scene scene;
     private Student myStudent = new Student();
     private HashMap<String, Course> classesByName = new HashMap<String, Course>(55);
     private ArrayList<Course> coursesOffered = new ArrayList<Course>(55);
@@ -29,9 +30,11 @@ public class Controller {
     @FXML private TextField curYearField = new TextField();
     @FXML private TextField gradYearField = new TextField();
     @FXML private Label majSelectErrorLabel;
+    private Scene nextScene;
     //private Set courseCBoxList;
     //private CheckBox[] courseCBoxArr = new CheckBox[60];
-    private Scene scene;
+
+    private HashMap<Integer, String> quarterMap = new HashMap<Integer, String>(3);
 
     //fill courses database
     public void initCourses(){
@@ -895,6 +898,10 @@ public class Controller {
         majorComboBox.setItems(majors);
 
         ObservableList<String> quarters = FXCollections.observableArrayList("Fall", "Winter", "Spring");
+        quarterMap.put(0, "Fall");
+        quarterMap.put(1, "Winter");
+        quarterMap.put(2, "Spring");
+
         curQuarterBox.setItems(quarters);
         gradQuarterBox.setItems(quarters);
 
@@ -918,6 +925,13 @@ public class Controller {
         //need to make sure every field isn't empty
         if(isValidInput() ){
             myStudent.setMajor(majorMap.get(selectedIndex));
+            int startYear = Integer.parseInt(curYearField.getText());
+            String startQuarter = quarterMap.get(curQuarterBox.getSelectionModel().getSelectedIndex());
+            myStudent.setStartTime(new AcademicTime(startQuarter, startYear));
+            int gradYear = Integer.parseInt(gradYearField.getText());
+            String gradQuarter = quarterMap.get(gradQuarterBox.getSelectionModel().getSelectedIndex());
+
+            myStudent.setGradTime(new AcademicTime(gradQuarter, gradYear));
             switchSceneForwards("courseselect.fxml"); //move to course select screen
         }
         else{
@@ -963,6 +977,7 @@ public class Controller {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
             Stage stage = (Stage) majSelectNxt.getScene().getWindow();
+            Scene curScene = scene;
             scene = new Scene(loader.load());
             stage.setScene(scene);
             CourseSelectController controller = loader.<CourseSelectController>getController();
@@ -971,6 +986,10 @@ public class Controller {
             io.printStackTrace();
         }
 
+    }
+
+    public void setNextScene(Scene scene){
+        nextScene = scene;
     }
 
     //for checkboxes, make list of all of them, loop through, if true, get its text and add it to classesTaken from classesByName

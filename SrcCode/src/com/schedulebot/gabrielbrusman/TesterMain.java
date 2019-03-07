@@ -865,7 +865,7 @@ public class TesterMain {
 
 
         ArrayList<String> testInterests = new ArrayList<String>(4);
-        //testInterests.add("Physics");
+        testInterests.add("Physics");
         testInterests.add("Computers");
         //testInterests.add("Teaching");
         Student testStu = new Student(curTime, gradTime, Student.Major.LAMA, testInterests, classesTaken);

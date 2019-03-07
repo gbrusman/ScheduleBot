@@ -7,9 +7,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.schedulebot.gabrielbrusman.CourseSelectController">
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.schedulebot.gabrielbrusman.CourseSelectController">
    <children>
-      <GridPane layoutX="1.0">
+      <GridPane alignment="CENTER" layoutX="1.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <columnConstraints>
             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
          </columnConstraints>
@@ -17,10 +17,12 @@
             <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
          </rowConstraints>
          <children>
-            <GridPane fx:id="courseSelectGPane" layoutX="1.0" prefHeight="400.0" prefWidth="600.0">
+            <GridPane fx:id="courseSelectGPane" alignment="CENTER" layoutX="1.0" prefHeight="400.0" prefWidth="600.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
@@ -28,50 +30,285 @@
                 <RowConstraints maxHeight="128.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
                 <RowConstraints maxHeight="267.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
                 <RowConstraints maxHeight="338.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="345.0" minHeight="0.0" prefHeight="33.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="354.0" minHeight="0.0" prefHeight="36.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="354.0" minHeight="0.0" prefHeight="37.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="354.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="354.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="354.0" minHeight="10.0" prefHeight="39.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="354.0" minHeight="3.0" prefHeight="37.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="354.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="354.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="354.0" minHeight="10.0" prefHeight="18.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="354.0" minHeight="0.0" prefHeight="14.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="345.0" minHeight="0.0" prefHeight="31.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="354.0" minHeight="0.0" prefHeight="31.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="354.0" minHeight="0.0" prefHeight="31.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="354.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="354.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="354.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="354.0" minHeight="3.0" prefHeight="31.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="354.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="354.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="354.0" minHeight="10.0" prefHeight="16.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="354.0" minHeight="0.0" prefHeight="16.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label alignment="TOP_CENTER" text="Please select which classes you have taken or are currently taking." GridPane.columnSpan="3" GridPane.halignment="CENTER" GridPane.valignment="TOP" />
-                  <CheckBox id="CheckBox" mnemonicParsing="false" text="MAT21A" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-                  <CheckBox id="CheckBox" layoutX="10.0" layoutY="38.0" mnemonicParsing="false" text="MAT21B" GridPane.rowIndex="3" />
-                  <CheckBox id="CheckBox" layoutX="10.0" layoutY="80.0" mnemonicParsing="false" text="MAT21C" GridPane.rowIndex="4" />
-                  <CheckBox id="CheckBox" layoutX="10.0" layoutY="103.0" mnemonicParsing="false" text="MAT21D" GridPane.rowIndex="5" />
-                  <CheckBox id="CheckBox" layoutX="10.0" layoutY="140.0" mnemonicParsing="false" text="MAT22AL" GridPane.rowIndex="6" />
-                  <CheckBox id="CheckBox" layoutX="10.0" layoutY="181.0" mnemonicParsing="false" text="MAT22A" GridPane.rowIndex="7" />
-                  <CheckBox id="CheckBox" layoutX="10.0" layoutY="258.0" mnemonicParsing="false" text="MAT67" GridPane.rowIndex="9" />
-                  <CheckBox id="CheckBox" layoutX="10.0" layoutY="265.0" mnemonicParsing="false" text="MAT22B" GridPane.rowIndex="8" />
-                  <CheckBox id="CheckBox" layoutX="10.0" layoutY="267.0" mnemonicParsing="false" text="MAT108" GridPane.rowIndex="10" />
-                  <CheckBox id="CheckBox" layoutX="10.0" layoutY="291.0" mnemonicParsing="false" text="MAT111" GridPane.rowIndex="11" />
-                  <CheckBox id="CheckBox" layoutX="10.0" layoutY="331.0" mnemonicParsing="false" text="MAT114" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <CheckBox id="CheckBox" layoutX="216.0" layoutY="47.0" mnemonicParsing="false" text="MAT115A" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <CheckBox id="CheckBox" layoutX="216.0" layoutY="78.0" mnemonicParsing="false" text="MAT115B" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                  <CheckBox id="CheckBox" layoutX="216.0" layoutY="111.0" mnemonicParsing="false" text="MAT116" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                  <CheckBox id="CheckBox" layoutX="216.0" layoutY="147.0" mnemonicParsing="false" text="MAT118A" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                  <CheckBox id="CheckBox" layoutX="216.0" layoutY="182.0" mnemonicParsing="false" text="MAT118B" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                  <CheckBox id="CheckBox" layoutX="216.0" layoutY="215.0" mnemonicParsing="false" text="MAT119A" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-                  <CheckBox id="CheckBox" layoutX="216.0" layoutY="251.0" mnemonicParsing="false" text="MAT119B" GridPane.columnIndex="1" GridPane.rowIndex="9" />
-                  <CheckBox id="CheckBox" layoutX="216.0" layoutY="289.0" mnemonicParsing="false" text="MAT124" GridPane.columnIndex="1" GridPane.rowIndex="10" />
-                  <CheckBox id="CheckBox" layoutX="216.0" layoutY="323.0" mnemonicParsing="false" text="MAT127A" GridPane.columnIndex="1" GridPane.rowIndex="11" />
-                  <CheckBox id="CheckBox" layoutX="170.0" layoutY="354.0" mnemonicParsing="false" text="MAT127B" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                  <CheckBox id="CheckBox" layoutX="324.0" layoutY="47.0" mnemonicParsing="false" text="MAT127C" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                  <CheckBox id="CheckBox" layoutX="324.0" layoutY="78.0" mnemonicParsing="false" text="MAT128A" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-                  <CheckBox id="CheckBox" layoutX="324.0" layoutY="111.0" mnemonicParsing="false" text="MAT128B" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-                  <CheckBox id="CheckBox" layoutX="324.0" layoutY="147.0" mnemonicParsing="false" text="MAT128C" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-                  <CheckBox id="CheckBox" layoutX="324.0" layoutY="182.0" mnemonicParsing="false" text="MAT129" GridPane.columnIndex="2" GridPane.rowIndex="7" />
-                  <CheckBox id="CheckBox" layoutX="324.0" layoutY="215.0" mnemonicParsing="false" text="MAT133" GridPane.columnIndex="2" GridPane.rowIndex="8" />
-                  <CheckBox id="CheckBox" layoutX="324.0" layoutY="251.0" mnemonicParsing="false" text="MAT135A" GridPane.columnIndex="2" GridPane.rowIndex="9" />
-                  <CheckBox id="CheckBox" layoutX="324.0" layoutY="289.0" mnemonicParsing="false" text="MAT135B" GridPane.columnIndex="2" GridPane.rowIndex="10" />
-                  <CheckBox id="CheckBox" layoutX="324.0" layoutY="323.0" mnemonicParsing="false" text="MAT141" GridPane.columnIndex="2" GridPane.rowIndex="11" />
+                  <Label alignment="TOP_CENTER" text="Please select which classes you have taken or are currently taking." GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.valignment="TOP" />
+                  <CheckBox id="CheckBox" mnemonicParsing="false" text="MAT21A" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox id="CheckBox" layoutX="10.0" layoutY="38.0" mnemonicParsing="false" text="MAT21B" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox id="CheckBox" layoutX="10.0" layoutY="80.0" mnemonicParsing="false" text="MAT21C" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox id="CheckBox" layoutX="10.0" layoutY="103.0" mnemonicParsing="false" text="MAT21D" GridPane.rowIndex="5">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox id="CheckBox" layoutX="10.0" layoutY="140.0" mnemonicParsing="false" text="MAT22AL" GridPane.rowIndex="6">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox id="CheckBox" layoutX="10.0" layoutY="181.0" mnemonicParsing="false" text="MAT22A" GridPane.rowIndex="7">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox id="CheckBox" layoutX="10.0" layoutY="258.0" mnemonicParsing="false" text="MAT67" GridPane.rowIndex="9">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox id="CheckBox" layoutX="10.0" layoutY="265.0" mnemonicParsing="false" text="MAT22B" GridPane.rowIndex="8">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox id="CheckBox" layoutX="10.0" layoutY="267.0" mnemonicParsing="false" text="MAT108" GridPane.rowIndex="10">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox id="CheckBox" layoutX="10.0" layoutY="291.0" mnemonicParsing="false" text="MAT111" GridPane.rowIndex="11">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox id="CheckBox" layoutX="10.0" layoutY="331.0" mnemonicParsing="false" text="MAT114" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox id="CheckBox" layoutX="216.0" layoutY="47.0" mnemonicParsing="false" text="MAT115A" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox id="CheckBox" layoutX="216.0" layoutY="78.0" mnemonicParsing="false" text="MAT115B" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox id="CheckBox" layoutX="216.0" layoutY="111.0" mnemonicParsing="false" text="MAT116" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox id="CheckBox" layoutX="216.0" layoutY="147.0" mnemonicParsing="false" text="MAT118A" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox id="CheckBox" layoutX="216.0" layoutY="182.0" mnemonicParsing="false" text="MAT118B" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox id="CheckBox" layoutX="216.0" layoutY="215.0" mnemonicParsing="false" text="MAT119A" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox id="CheckBox" layoutX="216.0" layoutY="251.0" mnemonicParsing="false" text="MAT119B" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox id="CheckBox" layoutX="216.0" layoutY="289.0" mnemonicParsing="false" text="MAT124" GridPane.columnIndex="1" GridPane.rowIndex="10">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox id="CheckBox" layoutX="216.0" layoutY="323.0" mnemonicParsing="false" text="MAT127A" GridPane.columnIndex="1" GridPane.rowIndex="11">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox id="CheckBox" layoutX="170.0" layoutY="354.0" mnemonicParsing="false" text="MAT127B" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox id="CheckBox" layoutX="324.0" layoutY="47.0" mnemonicParsing="false" text="MAT127C" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox id="CheckBox" layoutX="324.0" layoutY="78.0" mnemonicParsing="false" text="MAT128A" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox id="CheckBox" layoutX="324.0" layoutY="111.0" mnemonicParsing="false" text="MAT128B" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox id="CheckBox" layoutX="324.0" layoutY="147.0" mnemonicParsing="false" text="MAT128C" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox id="CheckBox" layoutX="324.0" layoutY="182.0" mnemonicParsing="false" text="MAT129" GridPane.columnIndex="2" GridPane.rowIndex="7">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox id="CheckBox" layoutX="324.0" layoutY="215.0" mnemonicParsing="false" text="MAT133" GridPane.columnIndex="2" GridPane.rowIndex="8">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox id="CheckBox" layoutX="324.0" layoutY="251.0" mnemonicParsing="false" text="MAT135A" GridPane.columnIndex="2" GridPane.rowIndex="9">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox id="CheckBox" layoutX="324.0" layoutY="289.0" mnemonicParsing="false" text="MAT135B" GridPane.columnIndex="2" GridPane.rowIndex="10">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox id="CheckBox" layoutX="324.0" layoutY="323.0" mnemonicParsing="false" text="MAT141" GridPane.columnIndex="2" GridPane.rowIndex="11">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox id="CheckBox" layoutX="315.0" layoutY="354.0" mnemonicParsing="false" text="MAT145" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox id="CheckBox" layoutX="460.0" layoutY="47.0" mnemonicParsing="false" text="MAT146" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox id="CheckBox" layoutX="460.0" layoutY="78.0" mnemonicParsing="false" text="MAT147" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox id="CheckBox" layoutX="460.0" layoutY="111.0" mnemonicParsing="false" text="MAT148" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox id="CheckBox" layoutX="460.0" layoutY="147.0" mnemonicParsing="false" text="MAT150A" GridPane.columnIndex="3" GridPane.rowIndex="6">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox id="CheckBox" layoutX="460.0" layoutY="182.0" mnemonicParsing="false" text="MAT150B" GridPane.columnIndex="3" GridPane.rowIndex="7">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox id="CheckBox" layoutX="460.0" layoutY="215.0" mnemonicParsing="false" text="MAT150C" GridPane.columnIndex="3" GridPane.rowIndex="8">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox id="CheckBox" layoutX="460.0" layoutY="251.0" mnemonicParsing="false" text="MAT160" GridPane.columnIndex="3" GridPane.rowIndex="9">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox id="CheckBox" layoutX="460.0" layoutY="289.0" mnemonicParsing="false" text="MAT165" GridPane.columnIndex="3" GridPane.rowIndex="10">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox id="CheckBox" layoutX="460.0" layoutY="323.0" mnemonicParsing="false" text="MAT167" GridPane.columnIndex="3" GridPane.rowIndex="11">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox id="CheckBox" layoutX="370.0" layoutY="354.0" mnemonicParsing="false" text="MAT168" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox id="CheckBox" layoutX="490.0" layoutY="47.0" mnemonicParsing="false" text="MAT180" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox id="CheckBox" layoutX="490.0" layoutY="78.0" mnemonicParsing="false" text="MAT185A" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox id="CheckBox" layoutX="490.0" layoutY="111.0" mnemonicParsing="false" text="MAT185B" GridPane.columnIndex="4" GridPane.rowIndex="5">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox id="CheckBox" layoutX="490.0" layoutY="147.0" mnemonicParsing="false" text="MAT189" GridPane.columnIndex="4" GridPane.rowIndex="6">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox id="CheckBox" layoutX="490.0" layoutY="182.0" mnemonicParsing="false" text="ENG06" GridPane.columnIndex="4" GridPane.rowIndex="7">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox id="CheckBox" layoutX="490.0" layoutY="215.0" mnemonicParsing="false" text="ECS32A" GridPane.columnIndex="4" GridPane.rowIndex="8">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox id="CheckBox" layoutX="490.0" layoutY="251.0" mnemonicParsing="false" text="PHY7A" GridPane.columnIndex="4" GridPane.rowIndex="9">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox id="CheckBox" layoutX="490.0" layoutY="289.0" mnemonicParsing="false" text="PHY9A" GridPane.columnIndex="4" GridPane.rowIndex="10">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox id="CheckBox" layoutX="490.0" layoutY="323.0" mnemonicParsing="false" text="ECN1A" GridPane.columnIndex="4" GridPane.rowIndex="11">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox id="CheckBox" layoutX="410.0" layoutY="354.0" mnemonicParsing="false" text="ECN1B" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox id="CheckBox" layoutX="510.0" layoutY="47.0" mnemonicParsing="false" text="STA32" GridPane.columnIndex="5" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </CheckBox>
+                  <CheckBox id="CheckBox" layoutX="510.0" layoutY="78.0" mnemonicParsing="false" text="STA100" GridPane.columnIndex="5" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin>
+                  </CheckBox>
                </children>
             </GridPane>
             <Button fx:id="courseSelectNxt" mnemonicParsing="false" onAction="#addClassesToTaken" text="Next" GridPane.halignment="RIGHT" GridPane.valignment="BOTTOM">
@@ -79,8 +316,22 @@
                   <Insets />
                </opaqueInsets>
                <GridPane.margin>
-                  <Insets bottom="10.0" right="10.0" />
+                  <Insets bottom="5.0" right="5.0" />
                </GridPane.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="courseSelectBack" layoutX="559.0" layoutY="375.0" mnemonicParsing="false" onAction="#switchSceneBackwards" text="Back" GridPane.halignment="LEFT" GridPane.valignment="BOTTOM">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="5.0" />
+               </GridPane.margin>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
          </children>
       </GridPane>

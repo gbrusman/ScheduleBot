@@ -34,7 +34,10 @@
                   <Insets right="15.0" />
                </GridPane.margin>
             </Label>
-            <ComboBox fx:id="curQuarterBox" prefHeight="25.0" prefWidth="263.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+            <ComboBox fx:id="curQuarterBox" prefHeight="25.0" prefWidth="263.0" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></ComboBox>
             <Label alignment="CENTER_RIGHT" layoutX="51.0" layoutY="90.0" prefHeight="17.0" prefWidth="335.0" text="Current Quarter:" textAlignment="CENTER" GridPane.rowIndex="4">
                <GridPane.margin>
                   <Insets right="15.0" />
@@ -54,7 +57,10 @@
                   <Insets right="15.0" />
                </GridPane.margin>
             </Label>
-            <ComboBox fx:id="gradQuarterBox" layoutX="169.0" layoutY="160.0" prefHeight="25.0" prefWidth="263.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <ComboBox fx:id="gradQuarterBox" layoutX="169.0" layoutY="160.0" prefHeight="25.0" prefWidth="263.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></ComboBox>
             <Label alignment="CENTER_RIGHT" layoutX="51.0" layoutY="220.0" prefHeight="17.0" prefWidth="335.0" text="Graduation Year:" textAlignment="CENTER" GridPane.rowIndex="8">
                <GridPane.margin>
                   <Insets right="15.0" />

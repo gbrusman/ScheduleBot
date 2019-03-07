@@ -76,6 +76,14 @@ public class Student {
         this.major = major;
     }
 
+    public void setGradTime(AcademicTime gradTime) {
+        this.gradTime = gradTime;
+    }
+
+    public void setStartTime(AcademicTime startTime) {
+        this.startTime = startTime;
+    }
+
     public boolean hasTaken(String courseName){
        return classesTaken.containsKey(courseName);
     }

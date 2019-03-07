@@ -3,6 +3,7 @@ package com.schedulebot.gabrielbrusman;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
@@ -21,6 +22,9 @@ public class CourseSelectController {
     private CheckBox[] courseCBoxArr = new CheckBox[60];
     @FXML
     private GridPane courseSelectGPane;
+    @FXML private Button courseSelectNxt;
+    @FXML private Button courseSelectBack;
+    private Scene prevScene;
 
     public void initialize(){}
 
@@ -34,16 +38,53 @@ public class CourseSelectController {
     public void addClassesToTaken(){
         courseCBoxList = courseSelectGPane.lookupAll("CheckBox"); //get all checkboxes in scene
         courseCBoxList.toArray(courseCBoxArr);
-        for(int i = 0; i < 4; i++){ //FIXME: put exact size in i < x otherwise get nullpointer exception
+        for(int i = 0; i < 53; i++){ //FIXME: put exact size in i < x otherwise get nullpointer exception
             if(courseCBoxArr[i].isSelected()){ //look at all selected checkboxes
                 myStudent.getClassesTaken().put(courseCBoxArr[i].getText(), classesByName.get(courseCBoxArr[i].getText())); //add their text to classesTaken
-                System.out.println(courseCBoxArr[i].getText());
             }
         }
-        System.out.println(myStudent.getMajor());
-
-        //myStudent.getClassesTaken().put(courseName, classesByName.get(courseName));
+        switchSceneForwards();
     }
+
+    //FIXME: This one works
+    /*public void switchSceneBackwards(){
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("majselect.fxml"));
+            Stage stage = (Stage) courseSelectBack.getScene().getWindow();
+            scene = new Scene(loader.load());
+            stage.setScene(scene);
+            //Controller controller = loader.<Controller>getController();
+            //controller.initData(myStudent, classesByName, coursesOffered);
+        }catch (IOException io){
+            io.printStackTrace();
+        }
+
+    }*/
+
+    public void switchSceneBackwards(){
+        Stage stage = (Stage) courseSelectBack.getScene().getWindow();
+        stage.setScene(prevScene);
+
+    }
+
+    public void switchSceneForwards(){
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("interestselect.fxml"));
+            Stage stage = (Stage) courseSelectNxt.getScene().getWindow();
+            scene = new Scene(loader.load());
+            stage.setScene(scene);
+            InterestSelectController controller = loader.<InterestSelectController>getController();
+            controller.initData(myStudent, classesByName, coursesOffered);
+        }catch (IOException io){
+            io.printStackTrace();
+        }
+
+    }
+
+    public void setPrevScene(Scene scene){
+        prevScene = scene;
+    }
+
 
     //switches to new scene based on fxml file name input
    /* public void switchScene(String fxml){
