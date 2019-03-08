@@ -26,7 +26,6 @@ public class CourseSelectController {
     @FXML private Button courseSelectBack;
     private Scene prevScene;
     private Scene nextScene;
-    private Controller prevController;
     private InterestSelectController nextController;
 
     public void initialize(){}
@@ -50,21 +49,6 @@ public class CourseSelectController {
         switchSceneForwards();
     }
 
-    //FIXME: This one works
-    /*public void switchSceneBackwards(){
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("majselect.fxml"));
-            Stage stage = (Stage) courseSelectBack.getScene().getWindow();
-            scene = new Scene(loader.load());
-            stage.setScene(scene);
-            //Controller controller = loader.<Controller>getController();
-            //controller.initData(myStudent, classesByName, coursesOffered);
-        }catch (IOException io){
-            io.printStackTrace();
-        }
-
-    }*/
-
     public void switchSceneBackwards(){
         Stage stage = (Stage) courseSelectBack.getScene().getWindow();
         stage.setScene(prevScene);
@@ -83,6 +67,20 @@ public class CourseSelectController {
     }
 
 
+    public void setPrevScene(Scene scene){
+        prevScene = scene;
+    }
+
+    public void setNextScene(Scene scene){
+        nextScene = scene;
+    }
+
+
+
+
+
+    //old code that may or may not be useful in the future ////////////////////////////////////////////////////////////
+
    /* public void switchSceneForwards(){
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("interestselect.fxml"));
@@ -97,13 +95,20 @@ public class CourseSelectController {
 
     }*/
 
-    public void setPrevScene(Scene scene){
-        prevScene = scene;
-    }
+    //FIXME: This one works
+    /*public void switchSceneBackwards(){
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("majselect.fxml"));
+            Stage stage = (Stage) courseSelectBack.getScene().getWindow();
+            scene = new Scene(loader.load());
+            stage.setScene(scene);
+            //Controller controller = loader.<Controller>getController();
+            //controller.initData(myStudent, classesByName, coursesOffered);
+        }catch (IOException io){
+            io.printStackTrace();
+        }
 
-    public void setNextScene(Scene scene){
-        nextScene = scene;
-    }
+    }*/
 
 
     //switches to new scene based on fxml file name input
@@ -117,4 +122,5 @@ public class CourseSelectController {
             io.printStackTrace();
         }
     }*/
+
 }

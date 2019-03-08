@@ -37,6 +37,10 @@ public class Main extends Application {
         Parent interestSelectPane = interestSelectLoader.load();
         Scene interestSelectScene = new Scene(interestSelectPane, 500, 500);
 
+        FXMLLoader displayScheduleLoader = new FXMLLoader(getClass().getResource("displayschedule.fxml"));
+        Parent displaySchedulePane = displayScheduleLoader.load();
+        Scene displayScheduleScene = new Scene(displaySchedulePane, 500, 500);
+
         //put courseSelect scene in majSelect
         Controller majSelectController = (Controller) majSelectLoader.getController();
         majSelectController.setNextScene(courseSelectScene);
@@ -49,20 +53,26 @@ public class Main extends Application {
         InterestSelectController interestSelectController = (InterestSelectController) interestSelectLoader.getController();
         interestSelectController.setPrevScene(courseSelectScene);
 
+        //put interestSelect scene in displaySchedule
+        DisplayScheduleController displayScheduleController = (DisplayScheduleController) displayScheduleLoader.getController();
+        displayScheduleController.setPrevScene(interestSelectScene);
+
+        //put displaySchedule scene in interestSelect
+        interestSelectController.setNextScene(displayScheduleScene);
+
         //put interestSelect scene in courseSelect
         courseSelectController.setNextScene(interestSelectScene);
 
         //put courseSelect controller in majSelect
         majSelectController.setNextController(courseSelectController);
 
-        //put majSelect controller in courseSelect
-     //   courseSelectController.setPrevController(majSelectController);
 
         //put interestSelect controller in courseSelect
         courseSelectController.setNextController(interestSelectController);
 
-        //put courseSelect controller in interestSelect
-      //  interestSelectController.setPrevController(courseSelectController);
+        //put displaySchedule controller in interestSelect
+        interestSelectController.setNextController(displayScheduleController);
+
 
         //stage.show();
         primaryStage.setTitle("Schedulebot a.01");

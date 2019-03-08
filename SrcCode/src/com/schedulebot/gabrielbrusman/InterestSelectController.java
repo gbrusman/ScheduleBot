@@ -27,6 +27,8 @@ public class InterestSelectController {
     private Set interestCBoxList;
     private CheckBox[] interestCBoxArr = new CheckBox[7];
     private Scene prevScene;
+    private Scene nextScene;
+    private DisplayScheduleController nextController;
 
     public void initialize() {
     }
@@ -43,9 +45,13 @@ public class InterestSelectController {
         prevScene = scene;
     }
 
-   /* public void setNextController(InterestSelectController controller){
+    public void setNextScene(Scene scene){
+        nextScene = scene;
+    }
+
+    public void setNextController(DisplayScheduleController controller){
         nextController = controller;
-    }*/
+    }
 
 
     public void addInterests() {
@@ -57,11 +63,32 @@ public class InterestSelectController {
                 myStudent.getInterests().add(interestCBoxArr[i].getText()); //add their text to classesTaken
             }
         }
-        //switchSceneForwards();
+        switchSceneForwards();
     }
 
 
-    /*public void switchSceneBackwards() {
+
+
+    public void switchSceneBackwards(){
+        Stage stage = (Stage) interestSelectBack.getScene().getWindow();
+        stage.setScene(prevScene);
+
+    }
+
+   public void switchSceneForwards(){
+        nextController.initData(myStudent, classesByName, coursesOffered);
+        Stage stage = (Stage) interestSelectNxt.getScene().getWindow();
+        stage.setScene(nextScene);
+
+    }
+
+
+
+
+
+   //Old code that may or may not be useful in future /////////////////////////////////////////////////////////////////
+
+      /*public void switchSceneBackwards() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("courseselect.fxml"));
             Stage stage = (Stage) interestSelectBack.getScene().getWindow();
@@ -89,17 +116,6 @@ public class InterestSelectController {
 
     }*/
 
-    public void switchSceneBackwards(){
-        Stage stage = (Stage) interestSelectBack.getScene().getWindow();
-        stage.setScene(prevScene);
-
-    }
-
-   /* public void switchSceneForwards(){
-        Stage stage = (Stage) interestSelectNxt.getScene().getWindow();
-        stage.setScene(nextScene);
-
-    }*/
 }
 
 
