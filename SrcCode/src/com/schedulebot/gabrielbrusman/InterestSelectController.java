@@ -26,7 +26,7 @@ public class InterestSelectController {
     private GridPane interestSelectGPane;
     private Set interestCBoxList;
     private CheckBox[] interestCBoxArr = new CheckBox[7];
-
+    private Scene prevScene;
 
     public void initialize() {
     }
@@ -38,7 +38,18 @@ public class InterestSelectController {
     }
 
 
+
+    public void setPrevScene(Scene scene){
+        prevScene = scene;
+    }
+
+   /* public void setNextController(InterestSelectController controller){
+        nextController = controller;
+    }*/
+
+
     public void addInterests() {
+       myStudent.getInterests().clear(); //in case user had to go back and change something
         interestCBoxList = interestSelectGPane.lookupAll("CheckBox"); //get all checkboxes in scene
         interestCBoxList.toArray(interestCBoxArr);
         for (int i = 0; i < 7; i++) { //FIXME: put exact size in i < x otherwise get nullpointer exception
@@ -50,7 +61,7 @@ public class InterestSelectController {
     }
 
 
-    public void switchSceneBackwards() {
+    /*public void switchSceneBackwards() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("courseselect.fxml"));
             Stage stage = (Stage) interestSelectBack.getScene().getWindow();
@@ -76,7 +87,19 @@ public class InterestSelectController {
             io.printStackTrace();
         }
 
+    }*/
+
+    public void switchSceneBackwards(){
+        Stage stage = (Stage) interestSelectBack.getScene().getWindow();
+        stage.setScene(prevScene);
+
     }
+
+   /* public void switchSceneForwards(){
+        Stage stage = (Stage) interestSelectNxt.getScene().getWindow();
+        stage.setScene(nextScene);
+
+    }*/
 }
 
 

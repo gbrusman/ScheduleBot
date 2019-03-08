@@ -25,6 +25,9 @@ public class CourseSelectController {
     @FXML private Button courseSelectNxt;
     @FXML private Button courseSelectBack;
     private Scene prevScene;
+    private Scene nextScene;
+    private Controller prevController;
+    private InterestSelectController nextController;
 
     public void initialize(){}
 
@@ -36,6 +39,7 @@ public class CourseSelectController {
 
     //for checkboxes, make list of all of them, loop through, if true, get its text and add it to classesTaken from classesByName
     public void addClassesToTaken(){
+        myStudent.getClassesTaken().clear(); //empty in case user had to go back and change something
         courseCBoxList = courseSelectGPane.lookupAll("CheckBox"); //get all checkboxes in scene
         courseCBoxList.toArray(courseCBoxArr);
         for(int i = 0; i < 53; i++){ //FIXME: put exact size in i < x otherwise get nullpointer exception
@@ -68,6 +72,18 @@ public class CourseSelectController {
     }
 
     public void switchSceneForwards(){
+        Stage stage = (Stage) courseSelectNxt.getScene().getWindow();
+        stage.setScene(nextScene);
+        nextController.initData(myStudent, classesByName, coursesOffered);
+
+    }
+
+    public void setNextController(InterestSelectController controller){
+        nextController = controller;
+    }
+
+
+   /* public void switchSceneForwards(){
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("interestselect.fxml"));
             Stage stage = (Stage) courseSelectNxt.getScene().getWindow();
@@ -79,10 +95,14 @@ public class CourseSelectController {
             io.printStackTrace();
         }
 
-    }
+    }*/
 
     public void setPrevScene(Scene scene){
         prevScene = scene;
+    }
+
+    public void setNextScene(Scene scene){
+        nextScene = scene;
     }
 
 

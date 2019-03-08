@@ -31,6 +31,7 @@ public class Controller {
     @FXML private TextField gradYearField = new TextField();
     @FXML private Label majSelectErrorLabel;
     private Scene nextScene;
+    private CourseSelectController nextController;
     //private Set courseCBoxList;
     //private CheckBox[] courseCBoxArr = new CheckBox[60];
 
@@ -932,7 +933,7 @@ public class Controller {
             String gradQuarter = quarterMap.get(gradQuarterBox.getSelectionModel().getSelectedIndex());
 
             myStudent.setGradTime(new AcademicTime(gradQuarter, gradYear));
-            switchSceneForwards("courseselect.fxml"); //move to course select screen
+            switchSceneForwards(); //move to course select screen
         }
         else{
             majSelectErrorLabel.setVisible(true);
@@ -973,7 +974,7 @@ public class Controller {
         return false;
     }
     //switches to new scene based on fxml file name input
-    public void switchSceneForwards(String fxml){
+   /* public void switchSceneForwards(String fxml){
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
             Stage stage = (Stage) majSelectNxt.getScene().getWindow();
@@ -986,10 +987,24 @@ public class Controller {
             io.printStackTrace();
         }
 
+    }*/
+
+     public void switchSceneForwards(){
+           // FXMLLoader loader = new FXMLLoader(getClass().getResource("courseselect.fxml"));
+            Stage stage = (Stage) majSelectNxt.getScene().getWindow();
+            stage.setScene(nextScene);
+           // CourseSelectController controller = loader.<CourseSelectController>getController();
+            nextController.initData(myStudent, classesByName, coursesOffered);
+
     }
+
 
     public void setNextScene(Scene scene){
         nextScene = scene;
+    }
+
+    public void setNextController(CourseSelectController controller){
+         nextController = controller;
     }
 
     //for checkboxes, make list of all of them, loop through, if true, get its text and add it to classesTaken from classesByName
