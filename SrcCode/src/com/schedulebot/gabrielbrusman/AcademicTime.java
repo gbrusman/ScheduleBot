@@ -46,6 +46,24 @@ public class AcademicTime {
 
     }
 
+    public void reverseTime(){
+        switch(this.quarter){
+            case "Fall":
+                this.quarter = "Spring";
+                break;
+            case "Winter":
+                this.quarter = "Fall";
+                year--;
+                break;
+            case "Spring":
+                this.quarter = "Winter";
+                break;
+        }
+
+    }
+
+
+
     @Override
     public boolean equals(Object obj) {
         if (obj == this){

@@ -47,8 +47,9 @@ public class Student {
     }
 
 
-
-
+    public AcademicTime getStartTime() {
+        return startTime;
+    }
 
     public AcademicTime getCurTime() {
         return curTime;
