@@ -85,6 +85,10 @@ public class Student {
         this.startTime = startTime;
     }
 
+    public void setCurTime(AcademicTime curTime) {
+        this.curTime = curTime;
+    }
+
     public boolean hasTaken(String courseName){
        return classesTaken.containsKey(courseName);
     }

@@ -26,9 +26,7 @@ public class DisplayScheduleController {
 
 
     public void initialize(){
-      /* scheduleData = new Schedule(myStudent, coursesOffered);
-       schedule = scheduleData.getSchedule();
-       AcademicTime startTime = myStudent.getStartTime();
+      /* AcademicTime startTime = myStudent.getStartTime();
        AcademicTime gradTime = myStudent.getGradTime();
        AcademicTime tableStartTime = startTime;
 
@@ -63,6 +61,13 @@ public class DisplayScheduleController {
         this.myStudent = student;
         this.classesByName = classesByName;
         this.coursesOffered = coursesOffered;
+        getScheduleData();
+    }
+
+    public void getScheduleData(){
+        scheduleData = new Schedule(myStudent, coursesOffered);
+        schedule = scheduleData.getSchedule();
+        System.out.println("hello");
     }
 
     public void setPrevScene(Scene scene){

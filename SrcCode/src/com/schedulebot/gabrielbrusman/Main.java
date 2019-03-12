@@ -75,7 +75,7 @@ public class Main extends Application {
 
 
         //stage.show();
-        primaryStage.setTitle("Schedulebot a.01");
+        primaryStage.setTitle("ScheduleBot a.01");
         primaryStage.setScene(majSelectScene);
         primaryStage.show();
     }

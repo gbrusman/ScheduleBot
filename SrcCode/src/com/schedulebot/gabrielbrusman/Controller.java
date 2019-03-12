@@ -929,6 +929,7 @@ public class Controller {
             int startYear = Integer.parseInt(curYearField.getText());
             String startQuarter = quarterMap.get(curQuarterBox.getSelectionModel().getSelectedIndex());
             myStudent.setStartTime(new AcademicTime(startQuarter, startYear));
+            myStudent.setCurTime(myStudent.getStartTime());
             int gradYear = Integer.parseInt(gradYearField.getText());
             String gradQuarter = quarterMap.get(gradQuarterBox.getSelectionModel().getSelectedIndex());
 
