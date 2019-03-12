@@ -311,7 +311,7 @@
                   </CheckBox>
                </children>
             </GridPane>
-            <Button fx:id="courseSelectNxt" mnemonicParsing="false" onAction="#addClassesToTaken" text="Next" GridPane.halignment="RIGHT" GridPane.valignment="BOTTOM">
+            <Button fx:id="courseSelectNxt" mnemonicParsing="false" onAction="#addClassesToTaken" prefHeight="25.0" prefWidth="70.0" text="Next" GridPane.halignment="RIGHT" GridPane.valignment="BOTTOM">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -322,7 +322,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="courseSelectBack" layoutX="559.0" layoutY="375.0" mnemonicParsing="false" onAction="#switchSceneBackwards" text="Back" GridPane.halignment="LEFT" GridPane.valignment="BOTTOM">
+            <Button fx:id="courseSelectBack" layoutX="559.0" layoutY="375.0" mnemonicParsing="false" onAction="#switchSceneBackwards" prefHeight="25.0" prefWidth="70.0" text="Back" GridPane.halignment="LEFT" GridPane.valignment="BOTTOM">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>

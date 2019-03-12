@@ -63,7 +63,7 @@
                   <Insets left="5.0" />
                </GridPane.margin>
             </CheckBox>
-            <Button fx:id="interestSelectNxt" mnemonicParsing="false" onAction="#addInterests" text="Next" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="9" GridPane.valignment="BOTTOM">
+            <Button fx:id="interestSelectNxt" mnemonicParsing="false" onAction="#addInterests" prefHeight="25.0" prefWidth="70.0" text="Next" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="9" GridPane.valignment="BOTTOM">
                <GridPane.margin>
                   <Insets bottom="5.0" right="5.0" />
                </GridPane.margin>
@@ -71,7 +71,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="interestSelectBack" layoutX="564.0" layoutY="380.0" mnemonicParsing="false" onAction="#switchSceneBackwards" text="Back" GridPane.halignment="LEFT" GridPane.rowIndex="9" GridPane.valignment="BOTTOM">
+            <Button fx:id="interestSelectBack" layoutX="564.0" layoutY="380.0" mnemonicParsing="false" onAction="#switchSceneBackwards" prefHeight="25.0" prefWidth="70.0" text="Back" GridPane.halignment="LEFT" GridPane.rowIndex="9" GridPane.valignment="BOTTOM">
                <GridPane.margin>
                   <Insets bottom="5.0" left="5.0" />
                </GridPane.margin>
