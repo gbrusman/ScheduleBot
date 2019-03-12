@@ -992,7 +992,15 @@ public class Controller {
      public void switchSceneForwards(){
            // FXMLLoader loader = new FXMLLoader(getClass().getResource("courseselect.fxml"));
             Stage stage = (Stage) majSelectNxt.getScene().getWindow();
+            double stageHeight = stage.getHeight();
+            double stageWidth = stage.getWidth();
+            //Fixes size switching (not 100% sure why, but it works)
+            stage.setWidth(stageWidth);
+            stage.setHeight(stageHeight);
             stage.setScene(nextScene);
+            stage.setWidth(stageWidth);
+            stage.setHeight(stageHeight);
+
            // CourseSelectController controller = loader.<CourseSelectController>getController();
             nextController.initData(myStudent, classesByName, coursesOffered);
 
