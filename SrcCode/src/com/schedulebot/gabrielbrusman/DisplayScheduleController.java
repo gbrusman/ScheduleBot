@@ -4,9 +4,11 @@ import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.layout.VBox;
 import javafx.util.Callback;
 
 import java.util.ArrayList;
@@ -23,6 +25,8 @@ public class DisplayScheduleController {
     private Schedule scheduleData;
     private HashMap<AcademicTime, ScheduleBlock> schedule;
     ArrayList<TableView<String>> tableList = new ArrayList<TableView<String>>();
+    @FXML private VBox displayVBox;
+
 
 
     public void initialize(){
@@ -65,9 +69,30 @@ public class DisplayScheduleController {
     }
 
     public void getScheduleData(){
+        AcademicTime startTime = new AcademicTime(myStudent.getStartTime());
         scheduleData = new Schedule(myStudent, coursesOffered);
         schedule = scheduleData.getSchedule();
-        System.out.println("hello");
+
+
+        AcademicTime gradTime = myStudent.getGradTime();
+        AcademicTime tableStartTime = new AcademicTime(startTime);
+
+        while(tableStartTime.getQuarter() != "Fall"){
+            tableStartTime.reverseTime();
+        }
+        //first year tableview
+        TableView<String> table = new TableView<String>();
+        AcademicTime curTime = new AcademicTime(tableStartTime);
+
+        for(int i = 0; i < 3; i++){
+            AcademicTime newTime = new AcademicTime(curTime);
+            curTime.progressTime();
+            TableColumn<String, String> column = new TableColumn<String, String>(newTime.getQuarter() + " " + newTime.getYear()); //set title
+            table.getColumns().add(column);
+        }
+        table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
+        displayVBox.getChildren().add(0, table);
+
     }
 
     public void setPrevScene(Scene scene){
