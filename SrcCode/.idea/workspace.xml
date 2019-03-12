@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="00e0758b-595e-4416-95c4-7c7b7bddc554" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SrcCode/com/schedulebot/gabrielbrusman/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SrcCode/com/schedulebot/gabrielbrusman/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SrcCode/com/schedulebot/gabrielbrusman/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SrcCode/com/schedulebot/gabrielbrusman/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SrcCode/com/schedulebot/gabrielbrusman/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SrcCode/com/schedulebot/gabrielbrusman/Student.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/DisplayScheduleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/DisplayScheduleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/displayschedule.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/displayschedule.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -76,8 +72,8 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="48929" />
-          <entry key="PLAIN_TEXT" value="284" />
+          <entry key="JAVA" value="49064" />
+          <entry key="PLAIN_TEXT" value="369" />
           <entry key="XML" value="183" />
         </counts>
       </usages-collector>
@@ -115,8 +111,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/DisplayScheduleController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="92" column="14" selection-start-line="92" selection-start-column="14" selection-end-line="92" selection-end-column="14" />
+            <state relative-caret-position="157">
+              <caret line="92" column="12" selection-start-line="92" selection-start-column="12" selection-end-line="92" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2747#2755#0" expanded="true" />
@@ -333,7 +329,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/Gabriel/Desktop/ScheduleBot/SrcCode/src/com/schedulebot/gabrielbrusman/Schedule.java" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="396" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552414751908" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552416423057" />
     <property name="last_opened_file_path" value="C:/Program Files/Java/javafx-sdk-11.0.2/lib" />
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -453,7 +449,14 @@
       <option name="project" value="LOCAL" />
       <updated>1552412582851</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="First year table is printed out (columns not filled yet, but titles are correct).">
+      <created>1552414851879</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1552414851879</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -479,7 +482,7 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32879046" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32879046" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32879046" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4599659" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -508,7 +511,8 @@
     <MESSAGE value="Fixed window resizing issue." />
     <MESSAGE value="Uniform button sizes/placements" />
     <MESSAGE value="Schedule can now be generated from DisplayScheduleController." />
-    <option name="LAST_COMMIT_MESSAGE" value="Schedule can now be generated from DisplayScheduleController." />
+    <MESSAGE value="First year table is printed out (columns not filled yet, but titles are correct)." />
+    <option name="LAST_COMMIT_MESSAGE" value="First year table is printed out (columns not filled yet, but titles are correct)." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -800,8 +804,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/DisplayScheduleController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="92" column="14" selection-start-line="92" selection-start-column="14" selection-end-line="92" selection-end-column="14" />
+        <state relative-caret-position="157">
+          <caret line="92" column="12" selection-start-line="92" selection-start-column="12" selection-end-line="92" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2747#2755#0" expanded="true" />

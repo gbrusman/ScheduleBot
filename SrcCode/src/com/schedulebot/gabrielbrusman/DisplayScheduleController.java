@@ -88,6 +88,9 @@ public class DisplayScheduleController {
             AcademicTime newTime = new AcademicTime(curTime);
             curTime.progressTime();
             TableColumn<String, String> column = new TableColumn<String, String>(newTime.getQuarter() + " " + newTime.getYear()); //set title
+
+            //need to add classes to the column here
+
             table.getColumns().add(column);
         }
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
