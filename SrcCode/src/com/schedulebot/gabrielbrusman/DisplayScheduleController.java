@@ -5,15 +5,24 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.util.Callback;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
+import static java.lang.Double.MAX_VALUE;
 
 public class DisplayScheduleController {
     private Student myStudent = new Student();
@@ -74,14 +83,60 @@ public class DisplayScheduleController {
         schedule = scheduleData.getSchedule();
 
 
-        AcademicTime gradTime = myStudent.getGradTime();
+        AcademicTime gradTime = new AcademicTime(myStudent.getGradTime());
         AcademicTime tableStartTime = new AcademicTime(startTime);
 
         while(tableStartTime.getQuarter() != "Fall"){
-            tableStartTime.reverseTime();
+            tableStartTime = tableStartTime.reverseTime();
         }
+        ///////////////////////////////Label/Textfield attempt below (should be easier to engineer)
+        AcademicTime curTime = new AcademicTime(tableStartTime);
+
+        /*for(int i = 0; i < 3; i++) {
+            AcademicTime newTime = new AcademicTime(curTime);
+            curTime.progressTime();
+            Label column = new Label(newTime.getQuarter() + " " + newTime.getYear()); //set title
+            displayVBox.getChildren().add(column);
+        }*/
+        HBox yearBox = new HBox();
+       //while(!curTime.equals(gradTime) || !curTime.getQuarter().equals("Spring")){
+        while(curTime.getYear() != gradTime.getYear() || (curTime.getYear() == gradTime.getYear() && !curTime.getQuarter().equals("Fall"))){
+           if(curTime.getQuarter().equals("Fall")) {
+               yearBox = new HBox();
+               //yearBox.setMaxWidth();
+               displayVBox.getChildren().add(yearBox);
+           }
+           AcademicTime newTime = new AcademicTime(curTime);
+           curTime = new AcademicTime(curTime.progressTime());
+           //Label column = new Label(newTime.getQuarter() + " " + newTime.getYear()); //set title
+           //column.setFont(Font.font("Modena", FontWeight.BOLD, 16));
+           //column.setMaxWidth(MAX_VALUE);
+           //column.setAlignment(Pos.CENTER);
+           //yearBox.setHgrow(column, Priority.ALWAYS);
+           //yearBox.getChildren().add(column);
+            VBox blockBox = new VBox();
+            Label title = new Label(curTime.getQuarter() + " " + curTime.getYear());
+            title.setFont(Font.font("Modena", FontWeight.BOLD, 16));
+            title.setMaxWidth(MAX_VALUE);
+            title.setAlignment(Pos.CENTER);
+            blockBox.getChildren().add(title);
+           if(schedule.containsKey(curTime)){
+               TextField course0 = new TextField(schedule.get(curTime).getCourses().get(0).getName());
+               course0.setEditable(false);
+               blockBox.getChildren().add(course0);
+               if(schedule.get(curTime).getCourses().get(1) != null){
+                   TextField course1 = new TextField(schedule.get(curTime).getCourses().get(1).getName());
+                   course1.setEditable(false);
+                   blockBox.getChildren().add(course1);
+               }
+               yearBox.getChildren().add(blockBox);
+           }
+        }
+
+
+        ///////////////////////////////////////////////////// Table attempt below (hard to engineer)
         //first year tableview
-        TableView<String> table = new TableView<String>();
+       /* TableView<String> table = new TableView<String>();
         AcademicTime curTime = new AcademicTime(tableStartTime);
 
         for(int i = 0; i < 3; i++){
@@ -95,6 +150,9 @@ public class DisplayScheduleController {
         }
         table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
         displayVBox.getChildren().add(0, table);
+        */
+
+
 
     }
 

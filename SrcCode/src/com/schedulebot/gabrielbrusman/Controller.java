@@ -924,7 +924,7 @@ public class Controller {
         majorMap.put(7, LMCOMATH);
 
         //need to make sure every field isn't empty
-        if(isValidInput() ){
+        if(isValidInput()){
             myStudent.setMajor(majorMap.get(selectedIndex));
             int startYear = Integer.parseInt(curYearField.getText());
             String startQuarter = quarterMap.get(curQuarterBox.getSelectionModel().getSelectedIndex());

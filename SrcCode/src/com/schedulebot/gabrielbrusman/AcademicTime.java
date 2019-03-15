@@ -1,6 +1,8 @@
 package com.schedulebot.gabrielbrusman;
 
 
+import java.util.Objects;
+
 public class AcademicTime {
 
     public AcademicTime(String quarter, int year) {
@@ -30,36 +32,39 @@ public class AcademicTime {
         return year;
     }
 
-    public void progressTime(){
-        switch (this.quarter){
+    public AcademicTime progressTime(){
+        AcademicTime newTime = new AcademicTime(this);
+        switch (newTime.quarter){
             case "Fall":
-                this.quarter = "Winter";
-                this.year++;
+                newTime.quarter = "Winter";
+                newTime.year++;
                 break;
             case "Winter":
-                this.quarter = "Spring";
+                newTime.quarter = "Spring";
                 break;
             case "Spring":
-                this.quarter = "Fall";
+                newTime.quarter = "Fall";
                 break;
         }
+        return newTime;
 
     }
 
-    public void reverseTime(){
+    public AcademicTime reverseTime(){
+        AcademicTime newTime = new AcademicTime(this);
         switch(this.quarter){
             case "Fall":
-                this.quarter = "Spring";
+                newTime.quarter = "Spring";
                 break;
             case "Winter":
-                this.quarter = "Fall";
-                year--;
+                newTime.quarter = "Fall";
+                newTime.year--;
                 break;
             case "Spring":
-                this.quarter = "Winter";
+                newTime.quarter = "Winter";
                 break;
         }
-
+        return newTime;
     }
 
 
@@ -74,5 +79,10 @@ public class AcademicTime {
         }
         AcademicTime compare = (AcademicTime)obj;
         return (this.quarter == compare.getQuarter()) && (this.year == compare.getYear());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(quarter, year);
     }
 }

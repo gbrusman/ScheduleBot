@@ -67,11 +67,11 @@ public class Schedule {
     public void placeClasses() {
         AcademicTime gradTime = student.getGradTime();
         AcademicTime curTime = student.getCurTime();
-        curTime.progressTime(); //don't want it to start on the current quarter, want it to start on the next quarter
+        curTime = curTime.progressTime(); //don't want it to start on the current quarter, want it to start on the next quarter
         ArrayList<String> after = new ArrayList<String>(2);
         int requiredOrElectives = 0; //0 if need to place required, 1 if have placed required, 2 if have placed electives
         AcademicTime finishTime = student.getGradTime();
-        finishTime.progressTime(); //semantically, we have to be finished by the END of gradTime
+        finishTime = finishTime.progressTime(); //semantically, we have to be finished by the END of gradTime
         //AcademicTime startTime = new AcademicTime(curTime);
 
 
@@ -87,7 +87,7 @@ public class Schedule {
             }
 
             schedule.put(curTime, curBlock); //adds block to schedule
-            curTime.progressTime(); // move on to the next quarter (time)
+            curTime = new AcademicTime(curTime.progressTime()); // move on to the next quarter (time)
         }
     }
 
