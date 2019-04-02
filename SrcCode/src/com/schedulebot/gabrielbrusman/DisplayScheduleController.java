@@ -90,7 +90,7 @@ public class DisplayScheduleController {
             tableStartTime = tableStartTime.reverseTime();
         }
         ///////////////////////////////Label/Textfield attempt below (should be easier to engineer)
-        AcademicTime curTime = new AcademicTime(tableStartTime);
+        AcademicTime curTime = new AcademicTime(startTime);
 
         /*for(int i = 0; i < 3; i++) {
             AcademicTime newTime = new AcademicTime(curTime);
@@ -99,15 +99,59 @@ public class DisplayScheduleController {
             displayVBox.getChildren().add(column);
         }*/
         HBox yearBox = new HBox();
+        /*while(!curTime.equals(startTime)){
+            VBox blockBox = new VBox();
+            Label title = new Label(curTime.getQuarter() + " " + curTime.getYear());
+            title.setFont(Font.font("Modena", FontWeight.BOLD, 16));
+            title.setMaxWidth(MAX_VALUE);
+            title.setAlignment(Pos.CENTER);
+            blockBox.getChildren().add(title);
+
+            yearBox.getChildren().add(blockBox);
+            curTime = new AcademicTime(curTime.progressTime());
+        }*/
+
        //while(!curTime.equals(gradTime) || !curTime.getQuarter().equals("Spring")){
+        boolean start = true;
+        boolean firstYear = true;
         while(curTime.getYear() != gradTime.getYear() || (curTime.getYear() == gradTime.getYear() && !curTime.getQuarter().equals("Fall"))){
-           if(curTime.getQuarter().equals("Fall")) {
+           if(curTime.getQuarter().equals("Spring")) { //if set to Fall it displays first year but is off by one, if Spring it just doesn't display first year
+               if(firstYear){
+                   displayVBox.getChildren().add(yearBox);
+                   firstYear = false;
+               }
                yearBox = new HBox();
                //yearBox.setMaxWidth();
                displayVBox.getChildren().add(yearBox);
            }
            AcademicTime newTime = new AcademicTime(curTime);
            curTime = new AcademicTime(curTime.progressTime());
+
+           if(startTime.getQuarter().equals("Spring")){
+               start = false;
+           }
+           if(start) {
+               while (!tableStartTime.equals(curTime/*.progressTime()*/)) {
+                   VBox blockBox = new VBox();
+                   Label title = new Label(tableStartTime.getQuarter() + " " + tableStartTime.getYear());
+                   title.setFont(Font.font("Modena", FontWeight.BOLD, 16));
+                   title.setMaxWidth(MAX_VALUE);
+                   title.setAlignment(Pos.CENTER);
+                   blockBox.getChildren().add(title);
+
+                   for (int i = 0; i < 2; i++) {
+                       TextField blank = new TextField();
+                       blank.setEditable(false);
+                       blockBox.getChildren().add(blank);
+                   }
+
+                   tableStartTime = tableStartTime.progressTime();
+                   yearBox.getChildren().add(blockBox);
+               }
+               start = false;
+           }
+
+
            //Label column = new Label(newTime.getQuarter() + " " + newTime.getYear()); //set title
            //column.setFont(Font.font("Modena", FontWeight.BOLD, 16));
            //column.setMaxWidth(MAX_VALUE);
