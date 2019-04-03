@@ -88,6 +88,7 @@ public class Schedule {
 
             schedule.put(curTime, curBlock); //adds block to schedule
             curTime = new AcademicTime(curTime.progressTime()); // move on to the next quarter (time)
+            student.setCurTime(curTime);
         }
     }
 

@@ -131,17 +131,19 @@ public class DisplayScheduleController {
                start = false;
            }
            if(start) {
-               while (!tableStartTime.equals(curTime/*.progressTime()*/)) {
+               while (!tableStartTime.equals(curTime)) {
                    VBox blockBox = new VBox();
                    Label title = new Label(tableStartTime.getQuarter() + " " + tableStartTime.getYear());
                    title.setFont(Font.font("Modena", FontWeight.BOLD, 16));
                    title.setMaxWidth(MAX_VALUE);
                    title.setAlignment(Pos.CENTER);
+                   title.setVisible(false);
                    blockBox.getChildren().add(title);
 
                    for (int i = 0; i < 2; i++) {
                        TextField blank = new TextField();
                        blank.setEditable(false);
+                       blank.setVisible(false);
                        blockBox.getChildren().add(blank);
                    }
 
