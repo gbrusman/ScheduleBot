@@ -37,6 +37,15 @@ public class Student {
         this.classesTaken = new HashMap<String, Course>();
     }
 
+    public Student(Student student){
+        this.startTime = student.getStartTime();
+        this.curTime = student.getCurTime();
+        this.gradTime = student.gradTime;
+        this.major = student.major;
+        this.interests = student.interests;
+        this.classesTaken = student.classesTaken;
+    }
+
     enum Major{
         LMATBS1, LMATBS2, LMATAB1, LMATAB2, LAMA, LMOR, LMCOMATH, LMCOBIO;
     }

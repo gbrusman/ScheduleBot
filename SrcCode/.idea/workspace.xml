@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="00e0758b-595e-4416-95c4-7c7b7bddc554" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SrcCode/com/schedulebot/gabrielbrusman/Schedule$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SrcCode/com/schedulebot/gabrielbrusman/Schedule$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/SrcCode/com/schedulebot/gabrielbrusman/Schedule.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SrcCode/com/schedulebot/gabrielbrusman/Schedule.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/Schedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/Schedule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/DisplayScheduleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/DisplayScheduleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/displayschedule.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/displayschedule.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -64,7 +64,7 @@
         <counts>
           <entry key="CLASS" value="1" />
           <entry key="GUI_DESIGNER_FORM" value="6" />
-          <entry key="JAVA" value="51" />
+          <entry key="JAVA" value="52" />
           <entry key="JFormDesigner_form" value="1" />
           <entry key="XML" value="7" />
         </counts>
@@ -77,8 +77,8 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="51564" />
-          <entry key="PLAIN_TEXT" value="541" />
+          <entry key="JAVA" value="52231" />
+          <entry key="PLAIN_TEXT" value="642" />
           <entry key="XML" value="183" />
         </counts>
       </usages-collector>
@@ -89,8 +89,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/Student.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="215" column="16" selection-start-line="215" selection-start-column="16" selection-end-line="215" selection-end-column="16" />
+            <state relative-caret-position="244">
+              <caret line="41" column="44" selection-start-line="41" selection-start-column="44" selection-end-line="41" selection-end-column="44" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1568#1569#0" expanded="true" />
@@ -107,7 +107,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
+            <state relative-caret-position="51">
               <caret line="19" column="15" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -116,11 +116,25 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/DisplayScheduleController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1">
-              <caret line="122" column="36" selection-start-line="122" selection-start-column="36" selection-end-line="122" selection-end-column="36" />
+            <state relative-caret-position="101">
+              <caret line="107" selection-start-line="107" selection-end-line="107" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#4679#4680#0" expanded="true" />
+                <element signature="e#4712#4713#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/CourseSelectController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="148">
+              <caret line="51" column="3" lean-forward="true" selection-start-line="51" selection-start-column="3" selection-end-line="55" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -129,22 +143,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/majselect.fxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="59" selection-start-line="9" selection-start-column="39" selection-end-line="18" selection-end-column="59" />
-            </state>
-          </provider>
-          <provider editor-type-id="JavaFX-Scene-Builder" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
-              <caret line="690" lean-forward="true" selection-start-line="690" selection-end-line="690" />
+            <state relative-caret-position="-408">
+              <caret line="895" column="18" selection-start-line="895" selection-start-column="18" selection-end-line="895" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#initCourses#0;class#Controller#0" />
               </folding>
             </state>
           </provider>
@@ -153,7 +158,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/AcademicTime.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1360">
+            <state relative-caret-position="363">
               <caret line="84" column="27" selection-start-line="84" selection-start-column="27" selection-end-line="84" selection-end-column="27" />
               <folding>
                 <element signature="e#1966#1967#0" expanded="true" />
@@ -162,11 +167,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/Schedule.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="90" column="39" selection-start-line="90" selection-start-column="39" selection-end-line="90" selection-end-column="39" />
+            <state relative-caret-position="94">
+              <caret line="146" selection-start-line="146" selection-end-line="146" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2731#2732#0" expanded="true" />
@@ -193,8 +198,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/displayschedule.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
+            <state relative-caret-position="-136">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
             </state>
           </provider>
           <provider editor-type-id="JavaFX-Scene-Builder" />
@@ -203,8 +208,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/InterestSelectController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="52" column="36" selection-start-line="52" selection-start-column="36" selection-end-line="52" selection-end-column="36" />
+            <state relative-caret-position="122">
+              <caret line="78" selection-start-line="78" selection-end-line="78" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -237,6 +242,7 @@
       <find>startT</find>
       <find>progress</find>
       <find>newTime</find>
+      <find>interestSelectBack</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -273,9 +279,9 @@
         <option value="$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/Main.java" />
         <option value="$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/Controller.java" />
         <option value="$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/AcademicTime.java" />
+        <option value="$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/Schedule.java" />
         <option value="$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/DisplayScheduleController.java" />
         <option value="$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/Student.java" />
-        <option value="$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/Schedule.java" />
       </list>
     </option>
   </component>
@@ -339,7 +345,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/Gabriel/Desktop/ScheduleBot/SrcCode/src/com/schedulebot/gabrielbrusman/Schedule.java" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW" value="true" />
     <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="396" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552683441689" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554317909087" />
     <property name="last_opened_file_path" value="C:/Program Files/Java/javafx-sdk-11.0.2/lib" />
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -487,7 +493,14 @@
       <option name="project" value="LOCAL" />
       <updated>1554231467032</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="ECS32A / curTime bug fix. Made blank blocks not visible.">
+      <created>1554313767651</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1554313767651</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -501,7 +514,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49008498" visible="true" weight="0.2730711" />
       <window_info id="Structure" order="1" sideWeight="0.509915" side_tool="true" weight="0.13691376" />
@@ -513,8 +525,8 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32879046" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.24190801" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.43441227" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.24190801" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.34582624" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32879046" />
@@ -575,7 +587,8 @@
     <MESSAGE value="formatting" />
     <MESSAGE value="Bug fixes and DisplayScheduleController improvements. Just need to fix layout and it should be good as MVP." />
     <MESSAGE value="Fixed display issues (I think)." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed display issues (I think)." />
+    <MESSAGE value="ECS32A / curTime bug fix. Made blank blocks not visible." />
+    <option name="LAST_COMMIT_MESSAGE" value="ECS32A / curTime bug fix. Made blank blocks not visible." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -600,28 +613,9 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/DisplayScheduleController.java</url>
-          <line>92</line>
+          <line>107</line>
           <properties />
-          <option name="timeStamp" value="52" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/Schedule.java</url>
-          <line>67</line>
-          <properties />
-          <option name="timeStamp" value="53" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <condition expression="curCourse.getName().equals(&quot;ECS32A&quot;)" language="JAVA" />
-          <url>file://$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/Schedule.java</url>
-          <line>146</line>
-          <properties />
-          <option name="timeStamp" value="54" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/Student.java</url>
-          <line>215</line>
-          <properties />
-          <option name="timeStamp" value="55" />
+          <option name="timeStamp" value="58" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -788,16 +782,6 @@
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/CourseSelectController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1003">
-          <caret line="76" selection-start-line="76" selection-end-line="76" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/majselect.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -805,54 +789,6 @@
         </state>
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/AcademicTime.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1360">
-          <caret line="84" column="27" selection-start-line="84" selection-start-column="27" selection-end-line="84" selection-end-column="27" />
-          <folding>
-            <element signature="e#1966#1967#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/displayschedule.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/InterestSelectController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="52" column="36" selection-start-line="52" selection-start-column="36" selection-end-line="52" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/DisplayScheduleController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1">
-          <caret line="122" column="36" selection-start-line="122" selection-start-column="36" selection-end-line="122" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="690" lean-forward="true" selection-start-line="690" selection-end-line="690" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/Course.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -864,10 +800,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/Student.java">
+    <entry file="file://$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/AcademicTime.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="363">
-          <caret line="215" column="16" selection-start-line="215" selection-start-column="16" selection-end-line="215" selection-end-column="16" />
+          <caret line="84" column="27" selection-start-line="84" selection-start-column="27" selection-end-line="84" selection-end-column="27" />
+          <folding>
+            <element signature="e#1966#1967#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/CourseSelectController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="51" column="3" lean-forward="true" selection-start-line="51" selection-start-column="3" selection-end-line="55" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="19" column="15" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/displayschedule.fxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-136">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/Schedule.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="94">
+          <caret line="146" selection-start-line="146" selection-end-line="146" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2731#2732#0" expanded="true" />
+            <element signature="e#2762#2763#0" expanded="true" />
+            <element signature="e#3215#3223#0" expanded="true" />
+            <element signature="e#5712#5720#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-408">
+          <caret line="895" column="18" selection-start-line="895" selection-start-column="18" selection-end-line="895" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#initCourses#0;class#Controller#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/Student.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="41" column="44" selection-start-line="41" selection-start-column="44" selection-end-line="41" selection-end-column="44" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1568#1569#0" expanded="true" />
@@ -880,26 +879,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/InterestSelectController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="19" column="15" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
+        <state relative-caret-position="122">
+          <caret line="78" selection-start-line="78" selection-end-line="78" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/Schedule.java">
+    <entry file="file://$PROJECT_DIR$/src/com/schedulebot/gabrielbrusman/DisplayScheduleController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="90" column="39" selection-start-line="90" selection-start-column="39" selection-end-line="90" selection-end-column="39" />
+        <state relative-caret-position="101">
+          <caret line="107" selection-start-line="107" selection-end-line="107" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2731#2732#0" expanded="true" />
-            <element signature="e#2762#2763#0" expanded="true" />
-            <element signature="e#3215#3223#0" expanded="true" />
-            <element signature="e#5712#5720#0" expanded="true" />
+            <element signature="e#4679#4680#0" expanded="true" />
+            <element signature="e#4712#4713#0" expanded="true" />
           </folding>
         </state>
       </provider>
