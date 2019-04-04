@@ -15,7 +15,7 @@ import java.util.HashMap;
 import static java.lang.Double.MAX_VALUE;
 
 public class DisplayScheduleController {
-    private static Student cleanStudent = new Student();
+    private Student cleanStudent = new Student();
     private Student myStudent = new Student();
     private HashMap<String, Course> classesByName = new HashMap<String, Course>(55);
     private ArrayList<Course> coursesOffered = new ArrayList<Course>(55);
@@ -25,15 +25,24 @@ public class DisplayScheduleController {
     private HashMap<AcademicTime, ScheduleBlock> schedule;
     @FXML private VBox displayVBox;
     @FXML private Button displayBackButton;
+    private int reset = 0;
 
 
 
 
-    public void initialize(){
-    }
+    public void initialize(){}
 
     public void initData(Student student, HashMap<String, Course> classesByName, ArrayList<Course> coursesOffered) {
-        this.cleanStudent = new Student(student);
+        displayVBox.getChildren().clear();
+       /* if(reset == 0){ //FIXME: This doesn't really work if people actually change data after going back b/c won't refresh new data
+            this.cleanStudent = new Student(student);
+            reset++;
+        }
+        this.cleanStudent = student;
+        this.cleanStudent.setCurTime(this.cleanStudent.getStartTime());
+        this.cleanStudent.*/
+
+
         this.myStudent = student;
         this.classesByName = classesByName;
         this.coursesOffered = coursesOffered;
@@ -41,7 +50,7 @@ public class DisplayScheduleController {
     }
 
     public void getScheduleData(){
-        myStudent = cleanStudent;
+       // myStudent = new Student(cleanStudent);
         AcademicTime startTime = new AcademicTime(myStudent.getStartTime());
         scheduleData = new Schedule(myStudent, coursesOffered);
         schedule = scheduleData.getSchedule();
@@ -102,7 +111,7 @@ public class DisplayScheduleController {
             title.setMaxWidth(MAX_VALUE);
             title.setAlignment(Pos.CENTER);
             blockBox.getChildren().add(title);
-           if(schedule.containsKey(curTime)){
+           if(schedule.containsKey(curTime)){ //FIXME: need to make sure schedule actually contains classes
                TextField course0 = new TextField(schedule.get(curTime).getCourses().get(0).getName());
                course0.setEditable(false);
                blockBox.getChildren().add(course0);

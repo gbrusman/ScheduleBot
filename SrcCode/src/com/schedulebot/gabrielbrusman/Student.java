@@ -38,12 +38,12 @@ public class Student {
     }
 
     public Student(Student student){
-        this.startTime = student.getStartTime();
-        this.curTime = student.getCurTime();
-        this.gradTime = student.gradTime;
+        this.startTime = new AcademicTime(student.startTime);
+        this.curTime = new AcademicTime(student.curTime);
+        this.gradTime =  new AcademicTime(student.gradTime);
         this.major = student.major;
-        this.interests = student.interests;
-        this.classesTaken = student.classesTaken;
+        this.interests = new ArrayList<String>(student.interests);
+        this.classesTaken = new HashMap<String,Course>(student.classesTaken);
     }
 
     enum Major{
@@ -97,6 +97,8 @@ public class Student {
     public void setCurTime(AcademicTime curTime) {
         this.curTime = curTime;
     }
+
+    public void setInterests(ArrayList<String> interests) {this.interests = interests;}
 
     public boolean hasTaken(String courseName){
        return classesTaken.containsKey(courseName);

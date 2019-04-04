@@ -25,8 +25,8 @@ public class Schedule {
 
     //constructor
     public Schedule(Student student, ArrayList<Course> classesOffered) {
-        this.student = student;
-        this.classesOffered = classesOffered; //FIXME: since we have classesByName we can technically get rid of this
+        this.student = new Student(student);
+        this.classesOffered = new ArrayList<Course>(classesOffered); //FIXME: since we have classesByName we can technically get rid of this
         this.schedule = new HashMap<AcademicTime, ScheduleBlock>(12); //max initial capacity needed if no summer sessions
         //FIXME: AFTER
         this.classesByName = new HashMap<String, Course>(55);
