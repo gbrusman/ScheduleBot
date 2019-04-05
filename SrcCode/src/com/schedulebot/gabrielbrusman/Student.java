@@ -229,7 +229,8 @@ public class Student {
                 return hasTaken("MAT21C");
             case "MAT22A":
                 return hasTaken("MAT21C");
-
+            case "MAT180":
+                return curTime.getYear() == gradTime.getYear();
         }
 
         return true; //if it isn't a special case w/ recommendations

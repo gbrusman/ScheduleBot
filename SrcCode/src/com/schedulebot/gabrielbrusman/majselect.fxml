@@ -21,7 +21,7 @@
    <children>
       <GridPane alignment="CENTER" prefHeight="406.0" prefWidth="649.0">
          <children>
-            <Label alignment="CENTER" prefHeight="17.0" prefWidth="335.0" text="Please choose your major from the options below." textAlignment="CENTER" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <Label alignment="CENTER" prefHeight="17.0" prefWidth="335.0" text="Please fill out the information in the form below." textAlignment="CENTER" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
             <ComboBox fx:id="majorComboBox" prefHeight="25.0" prefWidth="327.0" visibleRowCount="8" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2">
                <cursor>
                   <Cursor fx:constant="HAND" />
