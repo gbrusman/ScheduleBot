@@ -48,7 +48,7 @@
       </Rectangle>
       <Label minWidth="-Infinity" prefHeight="17.0" prefWidth="145.0" text="= Required Course " GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.valignment="BOTTOM">
          <GridPane.margin>
-            <Insets bottom="5.0" left="5.0" right="5.0" />
+            <Insets bottom="5.0" left="8.0" right="5.0" />
          </GridPane.margin>
       </Label>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00d8f9" height="30.0" stroke="BLACK" strokeType="INSIDE" width="30.0" GridPane.columnIndex="3" GridPane.halignment="RIGHT" GridPane.valignment="BOTTOM">
@@ -58,7 +58,7 @@
       </Rectangle>
       <Label minWidth="-Infinity" prefHeight="17.0" prefWidth="114.0" text="= Enrichment Course" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
          <GridPane.margin>
-            <Insets bottom="5.0" left="5.0" right="5.0" />
+            <Insets bottom="5.0" right="5.0" />
          </GridPane.margin>
       </Label>
    </children>

@@ -947,6 +947,8 @@ public class Controller {
     }
 
     public boolean isValidInput(){
+        gradYearField.setText(gradYearField.getText().trim());
+        curYearField.setText(curYearField.getText().trim());
         if(checkIfNullMajSelect()){
             return false;
         }
