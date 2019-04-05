@@ -75,7 +75,7 @@ public class DisplayScheduleController {
            if(startTime.getQuarter().equals("Spring")){
                start = false;
            }
-           if(start) {
+           if(start) { //if start, we need to initialize the first year with (invisible) blank quarters so that display starts w/ start of schedule
                while (!tableStartTime.equals(curTime)) {
                    VBox blockBox = new VBox();
                    blockBox.setAlignment(Pos.CENTER_LEFT);
@@ -88,6 +88,7 @@ public class DisplayScheduleController {
                    title.setVisible(false);
                    blockBox.getChildren().add(title);
 
+                   //create blank textfields to make spacing easier
                    for (int i = 0; i < 2; i++) {
                        TextField blank = new TextField();
                        blank.setEditable(false);
@@ -112,10 +113,16 @@ public class DisplayScheduleController {
             title.setMaxWidth(120);
             title.setAlignment(Pos.CENTER);
             blockBox.getChildren().add(title);
-           if(schedule.containsKey(curTime)){ //FIXME: need to make sure schedule actually contains classes
+           if(schedule.containsKey(curTime)){
                if(schedule.get(curTime).getCourses().size() > 0){
                    TextField course0 = new TextField(schedule.get(curTime).getCourses().get(0).getName());
                    course0.setEditable(false);
+                   if(schedule.get(curTime).getCourses().get(0).getRequired().get(myStudent.getMajor())){ //if the course is required
+                       course0.setStyle("-fx-control-inner-background: #"+"c8f442");
+                   }
+                   else{ //if the course isn't required
+                       course0.setStyle("-fx-control-inner-background: #"+"00d8f9");
+                   }
                    //course0.setAlignment(Pos.CENTER);
                    course0.setMaxWidth(120);
                    blockBox.getChildren().add(course0);
@@ -123,6 +130,12 @@ public class DisplayScheduleController {
                if(schedule.get(curTime).getCourses().size() > 1){
                    TextField course1 = new TextField(schedule.get(curTime).getCourses().get(1).getName());
                    course1.setEditable(false);
+                   if(schedule.get(curTime).getCourses().get(1).getRequired().get(myStudent.getMajor())){ //if the course is required
+                       course1.setStyle("-fx-control-inner-background: #"+"c8f442");
+                   }
+                   else{
+                       course1.setStyle("-fx-control-inner-background: #"+"00d8f9");
+                   }
                    //course1.setAlignment(Pos.CENTER);
                    course1.setMaxWidth(120);
                    blockBox.getChildren().add(course1);

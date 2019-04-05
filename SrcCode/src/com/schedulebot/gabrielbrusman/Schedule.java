@@ -176,7 +176,8 @@ public void tryToFillCurTime(ScheduleBlock curBlock, ArrayList<String> after, Ac
                 return student.hasTaken("ENG06") || block.contains("ENG06");
             case "ECS32A":
                 if(student.getMajor().equals(Student.Major.LMATAB1) || student.getMajor().equals(Student.Major.LMATBS2)){
-                    return student.hasTaken("ENG06");
+                   // return student.hasTaken("ENG06");
+                    return true;
                 }
             case "MAT128A":
                 if(student.getMajor().equals(Student.Major.LAMA)) {
