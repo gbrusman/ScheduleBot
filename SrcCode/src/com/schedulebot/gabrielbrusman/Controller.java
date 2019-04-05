@@ -669,10 +669,10 @@ public class Controller {
         required180.put(LMATBS2, true);
         required180.put(LMATAB1, true);
         required180.put(Student.Major.LMATAB2, true);
-        required180.put(Student.Major.LAMA, false);
-        required180.put(Student.Major.LMOR, false);
-        required180.put(Student.Major.LMCOMATH, false);
-        required180.put(Student.Major.LMCOBIO, false);
+        required180.put(Student.Major.LAMA, true);
+        required180.put(Student.Major.LMOR, true);
+        required180.put(Student.Major.LMCOMATH, true);
+        required180.put(Student.Major.LMCOBIO, true);
         String[] quartersOffered180 = new String[]{"Fall", "Winter", "Spring"};
 
         final Course MAT180 = new Course("MAT180", null, null, required180, quartersOffered180, Course.OfferedPattern.ALWAYS);
