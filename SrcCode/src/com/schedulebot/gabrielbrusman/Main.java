@@ -25,19 +25,19 @@ public class Main extends Application {
 
 
         //FIXME: Working on loading scenes into each other (NEED TO INCLUDE SETTER METHODS IN CONTROLLERS AND RECONFIGURE SWITCHING SCENE METHODS)
-        FXMLLoader majSelectLoader = new FXMLLoader(getClass().getResource("majselect.fxml"));
+        FXMLLoader majSelectLoader = new FXMLLoader(Main.class.getResource("majselect.fxml"));
         Parent majSelectPane = majSelectLoader.load();
         Scene majSelectScene = new Scene(majSelectPane, 500, 500);
 
-        FXMLLoader courseSelectLoader = new FXMLLoader(getClass().getResource("courseselect.fxml"));
+        FXMLLoader courseSelectLoader = new FXMLLoader(Main.class.getResource("courseselect.fxml"));
         Parent courseSelectPane = courseSelectLoader.load();
         Scene courseSelectScene = new Scene(courseSelectPane, 500, 500);
 
-        FXMLLoader interestSelectLoader = new FXMLLoader(getClass().getResource("interestselect.fxml"));
+        FXMLLoader interestSelectLoader = new FXMLLoader(Main.class.getResource("interestselect.fxml"));
         Parent interestSelectPane = interestSelectLoader.load();
         Scene interestSelectScene = new Scene(interestSelectPane, 500, 500);
 
-        FXMLLoader displayScheduleLoader = new FXMLLoader(getClass().getResource("displayschedule.fxml"));
+        FXMLLoader displayScheduleLoader = new FXMLLoader(Main.class.getResource("displayschedule.fxml"));
         Parent displaySchedulePane = displayScheduleLoader.load();
         Scene displayScheduleScene = new Scene(displaySchedulePane, 500, 500);
 

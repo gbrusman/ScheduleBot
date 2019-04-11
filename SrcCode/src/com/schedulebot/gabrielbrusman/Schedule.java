@@ -6,7 +6,6 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import org.apache.poi.ss.usermodel.*;
 import java.io.File;
 
 //FIXME: need a way to figure out how to pick 2 quarter-sequence classes or just classes where you have to pick (e.g. 2 out of 3 of x options)
@@ -48,12 +47,12 @@ public class Schedule {
         }
 
         placeClasses();
-        if(isSuccess(student.getMajor())){
+       /* if(isSuccess(student.getMajor())){
             System.out.println("SUCCESS!");
         }
         else{
             System.out.println("FAILURE ;(");
-        }
+        }*/
     }
 
     public HashMap<AcademicTime, ScheduleBlock> getSchedule() {
@@ -97,7 +96,7 @@ public class Schedule {
 
 public void addCourseToBlock(Course course, ScheduleBlock block, ArrayList<String> after, AcademicTime time){
     block.addCourse(course); //adds course to current block
-    System.out.println("Adding: " + course.getName() + " at " + time.getQuarter() + " " + time.getYear());
+    //System.out.println("Adding: " + course.getName() + " at " + time.getQuarter() + " " + time.getYear());
     after.add(course.getAfter());
     classesOffered.remove(course);
 }
@@ -105,7 +104,7 @@ public void addCourseToBlock(Course course, ScheduleBlock block, ArrayList<Strin
 
 public void addCourseFromAfter(Course course, ScheduleBlock block, ArrayList<String> after, AcademicTime time, int index){
     block.addCourse(course); //adds course to current block
-    System.out.println("Adding: " + course.getName() + " at " + time.getQuarter() + " " + time.getYear());
+    //System.out.println("Adding: " + course.getName() + " at " + time.getQuarter() + " " + time.getYear());
     //after.add(course.getAfter());
     classesOffered.remove(course);
     after.remove(index);
@@ -295,7 +294,7 @@ public void tryToFillCurTime(ScheduleBlock curBlock, ArrayList<String> after, Ac
 
         for(String classStr: requirements){
             if(!student.getClassesTaken().containsKey(classStr)){
-                System.out.println("Schedule doesn't contain " + classStr + "!");
+               // System.out.println("Schedule doesn't contain " + classStr + "!");
                 return false;
             }
         }
@@ -319,7 +318,7 @@ public void tryToFillCurTime(ScheduleBlock curBlock, ArrayList<String> after, Ac
 
         for(String classStr: requirements){
             if(!student.getClassesTaken().containsKey(classStr)){
-                System.out.println("Schedule doesn't contain " + classStr + "!");
+               // System.out.println("Schedule doesn't contain " + classStr + "!");
                 return false;
             }
         }
@@ -346,7 +345,7 @@ public void tryToFillCurTime(ScheduleBlock curBlock, ArrayList<String> after, Ac
 
         for(String classStr: requirements){
             if(!student.getClassesTaken().containsKey(classStr)){
-                System.out.println("Schedule doesn't contain " + classStr + "!");
+               // System.out.println("Schedule doesn't contain " + classStr + "!");
                 return false;
             }
         }
@@ -374,7 +373,7 @@ public void tryToFillCurTime(ScheduleBlock curBlock, ArrayList<String> after, Ac
 
         for(String classStr: requirements){
             if(!student.getClassesTaken().containsKey(classStr)){
-                System.out.println("Schedule doesn't contain " + classStr + "!");
+              //  System.out.println("Schedule doesn't contain " + classStr + "!");
                 return false;
             }
         }
@@ -402,7 +401,7 @@ public void tryToFillCurTime(ScheduleBlock curBlock, ArrayList<String> after, Ac
 
         for(String classStr: requirements){
             if(!student.getClassesTaken().containsKey(classStr)){
-                System.out.println("Schedule doesn't contain " + classStr + "!");
+              //  System.out.println("Schedule doesn't contain " + classStr + "!");
                 return false;
             }
         }
@@ -432,7 +431,7 @@ public void tryToFillCurTime(ScheduleBlock curBlock, ArrayList<String> after, Ac
 
         for(String classStr: requirements){
             if(!student.getClassesTaken().containsKey(classStr)){
-                System.out.println("Schedule doesn't contain " + classStr + "!");
+              //  System.out.println("Schedule doesn't contain " + classStr + "!");
                 return false;
             }
         }
@@ -461,7 +460,7 @@ public void tryToFillCurTime(ScheduleBlock curBlock, ArrayList<String> after, Ac
 
         for(String classStr: requirements){
             if(!student.getClassesTaken().containsKey(classStr)){
-                System.out.println("Schedule doesn't contain " + classStr + "!");
+             //   System.out.println("Schedule doesn't contain " + classStr + "!");
                 return false;
             }
         }
